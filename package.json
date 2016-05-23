@@ -1,7 +1,7 @@
 {
-  "name": "timgrillage",
+  "name": "timgrillage.github.io",
   "version": "1.0.0",
-  "description": "Front-End Developer",
+  "description": "My personal website",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",

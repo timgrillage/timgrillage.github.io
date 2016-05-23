@@ -1,0 +1,473 @@
+// ==================================================
+// 'Home' section
+// ==================================================
+
+#home {
+  background-color: $bg-light;
+  margin-top: 3.25rem; // Height of header
+  overflow: hidden;
+}
+
+.intro {
+  width: 100%;
+  padding: 1.75rem $padding-xxs 2rem;
+
+  p {
+    padding: 0;
+  }
+}
+
+.layers {
+  display: none;
+}
+
+
+// ==================================================
+// 'About' section
+// ==================================================
+
+#about {
+  .photo {
+    display: block;
+    width: 100%;
+    max-width: 335px;
+    height: auto;
+    margin: 0 auto 1rem;
+  }
+}
+
+
+// ==================================================
+// 'Skills' section
+// ==================================================
+
+#skills {
+  background-color: $bg-light;
+}
+
+.skill {
+  text-align: center;
+  padding-top: 0.75rem;
+
+  // Add top margin to all skills except first row
+  &:nth-of-type(1n+2) {
+    margin-top: 1.25rem;
+  }
+
+  &.revealed {
+    animation: fadeInUp 0.5s;
+  }
+  
+  // Icons
+  span {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: $highlight;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+
+    svg {
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      fill: #333;
+      overflow: visible;
+    }
+
+    &.responsive svg {
+      margin: 0 1px 0 -1px;
+    }
+
+    &.performance svg {
+      margin: -2px 0 2px;
+    }
+  }
+  
+  p {
+    padding-bottom: 0;
+  }
+}
+
+
+// ==================================================
+// 'Work' section
+// ==================================================
+
+#work {
+  padding-bottom: 0;
+}
+
+.project {
+  width: 100%;
+  max-width: 335px;
+  min-height: 200px;
+  position: relative;
+  margin: 0 auto;
+
+  &.revealed {
+    animation: zoomIn 0.5s;
+  }
+  
+  // Add top margin to all projects except the first
+  &:nth-of-type(1n+2) {
+    margin-top: 1rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  h3 {
+    position: relative;
+    background-color: #333;
+    font-weight: normal;
+    line-height: 2.875rem;
+    color: #f2f2f2;
+    padding: 0 1rem 0.125em;
+    margin: 0;
+    
+    // Info icon
+    span {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      cursor: pointer;
+
+      &:hover svg {
+        fill: $highlight;
+      }
+    }
+    
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+
+      &.small {
+        transform: scale(0.8, 0.8);
+      }
+    }
+  }
+
+  .details {
+    display: none;
+    height: calc(100% - 3rem);
+    position: absolute;
+    right: 0;
+    bottom: 3rem;
+    left: 0;
+    background-color: rgba(#333, 0.85);
+    color: #fff;
+    padding: 1rem;
+
+    li {
+      margin-top: 0.625rem;
+      
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #fff;
+        vertical-align: top;
+        margin-right: 0.5rem;
+      }
+
+      a {
+        display: inline-block;
+        line-height: 1.5rem;
+        color: #fff;
+        vertical-align: top;
+
+        &:hover {
+          color: $highlight;
+        }
+
+        &:hover svg {
+          fill: $highlight;
+        }
+      }
+    }
+  
+    // Hide details until panel slide complete
+    p, ul {
+      display: none;
+    }
+    
+    // Show details when panel slide complete
+    &.open {
+      p, ul {
+        display: block;
+      }
+    }
+  }
+
+  &.va {
+    background-color: #d9dadb;
+  }
+
+  &.oo {
+    background-color: #d1eb83;
+  }
+
+  &.sd {
+    background-color: #a9ddee;
+  }
+
+  &.je {
+    background-color: #339c49;
+  }
+}
+
+
+// ==================================================
+// Responsive
+// ==================================================
+
+@include breakpoint(xs) { // 360px
+  .intro {
+    padding: 1.75rem $padding-xs 2rem;
+  }
+
+  .project {
+    &:nth-of-type(1n+2) {
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+@include breakpoint(sm) { // 640px
+  .intro {
+    width: 60%;
+    float: left;
+    padding: 1.75rem 0 2rem $padding-sm;
+  }
+
+  @keyframes layers {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+  }
+  
+  // Website / code / wireframe slide-in images
+  .layers {
+    display: block;
+    width: 40%;
+    max-width: 490px;
+    float: right;
+    position: relative;
+    
+    // Force 'layers' div height to be 110% of width
+    &:before {
+      content: '';
+      display: block;
+      height: 0;
+      padding-bottom: 110%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      right: -100%;
+      animation: layers 0.3s ease-out 0s 1 forwards;
+      -webkit-transform: translate3d(0, 0, 0); // Fix Safari rendeing issue during animation
+    }
+
+    .website {
+      top: 20px;
+      animation-delay: 0.6s;
+    }
+
+    .code {
+      top: 80px;
+      animation-delay: 0.3s;
+    }
+
+    .wireframe {
+      top: 140px;
+    }
+  }
+
+  .project {
+    width: calc(50% - 0.75rem);
+    float: left;
+    
+    // Cancel top margins
+    &:nth-of-type(1n+2) {
+      margin-top: 0;
+    }
+
+    // Add top margin to all projects except first row
+    &:nth-of-type(1n+3) {
+      margin-top: 1.5rem;
+    }
+    
+    // Add right margin to left column projects
+    &:nth-of-type(2n+1) {
+      clear: both;
+      margin-right: 1.5rem;
+    } 
+  }
+}
+
+@include breakpoint(md) { // 768px
+  .intro {
+    width: 60%;
+    float: left;
+    padding: 1.75rem 0 2rem $padding-md;
+
+    p {
+      padding-right: 2rem;
+    }
+  }
+
+  #home {
+    margin-top: 5.5rem;
+  }
+
+  .layers {
+    width: 40%;
+    max-width: 490px;
+
+    &:before {
+      padding-bottom: 110%;
+    }
+
+    .website {
+      top: 20px;
+    }
+
+    .code {
+      top: 100px;
+    }
+
+    .wireframe {
+      top: 180px;
+    }
+  }
+
+  #about {
+    .photo {
+      width: calc(50% - 0.875rem);
+      max-width: 448px;
+      height: auto;
+      float: left;
+      margin-bottom: 0;
+
+      &.revealed {
+        animation: fadeInLeft 0.5s;
+      }
+    }
+
+    .text {
+      width: calc(50% + 0.875rem);
+      float: left;
+      padding-left: $padding-md;
+
+      &.revealed {
+        animation: fadeInRight 0.5s;
+      }
+    }
+  }
+
+  .skill {
+    float: left;
+    width: calc(50% - 0.875rem);
+    padding-top: 1rem;
+
+    // Reset top margin
+    &:nth-of-type(1n+2) {
+      margin-top: 0;
+    }
+
+    // Add top margin to all skills except first row
+    &:nth-of-type(1n+3) {
+      margin-top: 1.25rem;
+    }
+
+    // Add right margin to left column skills
+    &:nth-of-type(2n+1) {
+      clear: both;
+      margin-right: 1.75rem;
+    }
+  }
+
+  .project {
+    width: calc(50% - 0.875rem);
+    max-width: 448px;
+    
+    &:nth-of-type(2n+1) {
+      margin-right: 1.75rem;
+    }
+    
+    &:nth-of-type(1n+3) {
+      margin-top: 1.75rem;
+    }
+  }
+}
+
+@include breakpoint(lg) { // 1024px
+  .intro {
+    padding: 2.5rem 0 3rem $padding-lg;
+
+    p {
+      max-width: 36rem;
+    }
+  }
+
+  .layers {
+    .code {
+      top: 120px;
+    }
+
+    .wireframe {
+      top: 220px;
+    }
+  }
+
+  #about {
+    .photo {
+      max-width: 448px;
+    }
+
+    .text {
+      width: calc(100% - 448px);
+      padding-left: 2rem;
+    }
+  }
+
+  .skill {
+    width: calc(50% - 1rem);
+
+    // Add right margin to left column skills
+    &:nth-of-type(2n+1) {
+      margin-right: 2rem;
+    }
+  }
+
+  .project {
+    width: calc(50% - 1rem);
+
+    &:nth-of-type(2n+1) {
+      margin-right: 2rem;
+    }
+
+    &:nth-of-type(1n+3) {
+      margin-top: 2rem;
+    }
+
+    h3 {
+      padding: 0 1.5rem 0.125rem;
+    }
+
+    .details {
+      padding: 1rem 1.5rem;
+    }
+  }
+}

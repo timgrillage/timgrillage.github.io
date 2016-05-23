@@ -1,0 +1,145 @@
+#menu-icon {
+  width: 24px;
+  height: 20px;
+  float: right;
+  position: relative;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  
+  // Create bars
+  &:before, &:after, span:before, span:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    background: #000;
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  // Top bar
+  &:before {
+    top: 0;
+  }
+  
+  // Bottom bar
+  &:after {
+    top: 16px;
+  }
+  
+  // Middle bar
+  span:before, span:after {
+    top: 8px;
+  }
+  
+  // Hide top and bottom bars into middle when icon clicked
+  &.open {
+    &:before, &:after {
+      width: 0%;
+      top: 8px;
+      left: 50%;
+    }
+    
+    // Rotate middle bars to form X
+    span {
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+#main-menu {
+  display: none;
+  clear: both;
+  @include headingFont();
+
+  ul {
+    padding: 2rem 0 1rem;
+    visibility: hidden;
+  }
+
+  a {
+    display: block;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    color: #000;
+    line-height: 2.2em;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $highlight;
+    }
+  }
+
+  hr {
+    display: none;
+  }
+  
+  // Show menu when icon clicked
+  &.open ul {
+      visibility: visible;
+  }
+}
+
+
+// ==================================================
+// Responsive
+// ==================================================
+
+@include breakpoint(md) { // 768px
+  #menu-icon {
+    display: none;
+  }
+
+  #main-menu {
+    display: block;
+    clear: none;
+    max-width: 75%;
+    float: right;
+    position: relative;
+    background: none;
+
+    ul {
+      position: relative;
+      padding: 0;
+      visibility: visible;
+    }
+
+    li {
+      display: inline-block;
+      margin-left: 2em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      font-size: 0.875rem;
+      line-height: 2.5rem;
+      text-align: left;
+    }
+
+    hr {
+      display: block;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border: none;
+      background-color: $highlight;
+      padding: 0;
+      margin: 0;
+      transition: left 0.5s, width 0.5s;
+    }
+  }
+}

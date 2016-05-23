@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+ _   _                             _          _
+| | | |                           | |        | |
+| | | | ___ _   _ ___    ___  __ _| | _  ___ | |
+| | | |/ _ \ \ / / _ \  / __|/ _` | |/ // _ \|_|
+| | | | (_) \ ' /  __/ ( (__( (_| |   ((  __/ _
+|_| |_|\___/ \_/ \___|  \___|\__,_|_|\_\\___||_|
+
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Front-End Developer - Tim Grillage</title>
+  <meta name="description" content="A front-end developer from Oxfordshire who creates high performance, responsive websites that look and perform beautifully across multiple devices.">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:400,700">
+  <link rel="stylesheet" type="text/css" href="assets/style.css?v=1.0">
+</head>
+<body>
+  <header id="page-header">
+    <div class="inner-container">
+      <p id="logo"><a href="#home">&num;timGrillage</a></p>
+      <div id="menu-icon"><span></span></div>
+      <nav id="main-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home">
+      <div class="intro">
+        <h1>
+          Hello, I'm Tim.<br>
+          I make websites.<br>
+          Like this one!
+        </h1>
+        <p>I'm a front-end web developer from Oxfordshire. I create high performance, responsive websites that look and perform beautifully across multiple devices. I develop bespoke WordPress and Magento themes and write semantic code to W3C standards. I help old ladies cross the road and don't jump the queue at the post office!</p>
+      </div>
+      <div class="layers">
+        <img src="assets/img/wireframe.png" class="wireframe" alt="Website wireframe">
+        <img src="assets/img/code.png" class="code" alt="Website markup">
+        <img src="assets/img/website.png" class="website" alt="Website preview">
+      </div>
+    </section>
+    
+    <section id="about">
+      <header>
+        <div class="bubble">Who I am</div>
+        <h2>About Me</h2>
+      </header>
+      <picture>
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="assets/img/tim-small-2x.jpg" media="(max-width: 767px)">
+        <source srcset="assets/img/tim-medium-2x.jpg 2x, assets/img/tim-medium.jpg" media="(min-width: 768px)">
+        <!--[if IE 9]></video><![endif]-->
+        <img src="assets/img/tim-medium.jpg" class="photo animated" alt="Me up a mountain in New Zealand">
+      </picture>
+      <div class="text animated">
+        <p>I’ve been coding since websites were built with nested tables (not the type that grannies keep their china cats on). I've worked for digital agencies, an award winning e-commerce company and the UK's leading luxury travel company, as well as freelancing.</p>
+        <p>I love great design and admire creativity. I like creating things that people admire. I strive for perfection in an imperfect world.</p>
+        <p>I like to travel. I love mountains, especially ones covered in snow. I like sport, particularly football and F1. I like extreme sports, although these days shopping for socks is about the biggest adrenaline rush I get! I like good food and red wine. I like beer too. I don't like hangovers.</p>
+      </div>
+    </section>
+    
+    <section id="skills">
+      <header>
+        <div class="bubble">What I do</div>
+        <h2>My Skills</h2>
+      </header>
+      <p class="animated">I write semantic HTML, CSS, JavaScript and PHP. I use Sass, jQuery and Gulp to streamline my development and Git to keep track of everything. I use Photoshop to draw moustaches on babies.</p>
+      <div class="skill animated">
+        <span class="responsive">
+          <svg><use xlink:href="assets/img/icons.svg#icon-responsive"></use></svg>
+        </span>
+        <h3>Responsive</h3>
+        <p>I develop fully responsive websites using a mobile-first approach and progressive enhancement techniques to ensure sites look great on all modern browsers and devices.</p>
+      </div>
+      <div class="skill animated">
+        <span class="performance">
+          <svg><use xlink:href="assets/img/icons.svg#icon-stopwatch"></use></svg>
+        </span>
+        <h3>Performance</h3>
+        <p>I use multiple tools to keep asset sizes and http requests to a minimum, I don't use frameworks unless specifically necessary and I keep my code super lean - no div-itis!</p>
+      </div>
+      <div class="skill animated">
+        <span>
+          <svg><use xlink:href="assets/img/icons.svg#icon-wordpress"></use></svg>
+        </span>
+        <h3>WordPress</h3>
+        <p>I develop bespoke WordPress themes from scratch and create sites that offer easy administration, are search engine optimised and free from plugin bloat.</p>
+      </div>
+      <div class="skill animated">
+        <span>
+          <svg><use xlink:href="assets/img/icons.svg#icon-magento"></use></svg>
+        </span>
+        <h3>Magento</h3>
+        <p>I love creating e-commerce websites and Magento is king. I develop themes that are user-friendly with multiple product image sizes for optimum performance and quality.</p>
+      </div>
+    </section>
+    
+    <section id="work">
+      <header>
+        <div class="bubble">I did this</div>
+        <h2>Recent Work</h2>
+      </header>
+      <div class="project va animated">
+        <picture>
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="assets/img/va-small-2x.jpg" media="(max-width: 767px)">
+          <source srcset="assets/img/va-medium-2x.jpg 2x, assets/img/va-medium.jpg" media="(min-width: 768px)">
+          <!--[if IE 9]></video><![endif]-->
+          <img src="assets/img/va-medium.jpg" alt="Vintage &amp; Artisan website screenshots">
+        </picture>
+        <h3>Vintage &amp; Artisan
+          <span><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
+        </h3>
+        <div class="details">
+          <p>An e-commerce website for a ficticious company selling vintage and artisan furniture and accessories, built with Magento 2.</p>
+          <ul>
+            <!-- <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-eye"></use></svg>
+                View working demo
+              </a>
+            </li> -->
+            <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-github"></use></svg>
+                View project on Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="project oo animated">
+        <picture>
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="assets/img/oo-small-2x.jpg" media="(max-width: 767px)">
+          <source srcset="assets/img/oo-medium-2x.jpg 2x, assets/img/oo-medium.jpg" media="(min-width: 768px)">
+          <!--[if IE 9]></video><![endif]-->
+          <img src="assets/img/oo-medium.jpg" alt="ONA &amp; Oliver website on different devices">
+        </picture>
+        <h3>ONA &amp; Oliver
+          <span><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
+        </h3>
+        <div class="details">
+          <p>An e-commerce website for a friend's business to sell handmade jewellery and accessories online, built with WordPress and the WooCommerce plugin.</p>
+          <ul>
+            <!-- <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-eye"></use></svg>
+                View working demo
+              </a>
+            </li> -->
+            <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-github"></use></svg>
+                View project on Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="project sd animated">
+        <picture>
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="assets/img/sd-small-2x.jpg" media="(max-width: 767px)">
+          <source srcset="assets/img/sd-medium-2x.jpg 2x, assets/img/sd-medium.jpg" media="(min-width: 768px)">
+          <!--[if IE 9]></video><![endif]-->
+          <img src="assets/img/sd-medium.jpg" alt="JE Murals background image">
+        </picture>
+        <h3>Scott Dunn Jobs
+          <span><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
+        </h3>
+        <div class="details">
+        <p>A recruitment website for the UK's leading luxury travel company, built with WordPress.</p>
+          <ul>
+            <!-- <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-eye"></use></svg>
+                View working demo
+              </a>
+            </li> -->
+            <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-github"></use></svg>
+                View project on Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="project je animated">
+        <picture>
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="assets/img/je-small-2x.jpg" media="(max-width: 767px)">
+          <source srcset="assets/img/je-medium-2x.jpg 2x, assets/img/je-medium.jpg" media="(min-width: 768px)">
+          <!--[if IE 9]></video><![endif]-->
+          <img src="assets/img/je-medium.jpg" alt="JE Murals background image">
+        </picture>
+        <h3>JE Murals
+          <span><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
+        </h3>
+        <div class="details">
+          <p>A brochure website for a local children's mural artist, built with WordPress.</p>
+          <ul>
+            <!-- <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-eye"></use></svg>
+                View working demo
+              </a>
+            </li> -->
+            <li>
+              <a href="#">
+                <svg><use xlink:href="assets/img/icons.svg#icon-github"></use></svg>
+                View project on Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact">
+      <header>
+        <div class="bubble">Say hello</div>
+        <h2>Contact</h2>
+      </header>
+      <form method="post" class="animated">
+        <p><input type="text" name="name" placeholder="Name" required></p>
+        <p><input type="email" name="email" placeholder="Email" required></p>
+        <p><textarea name="message" cols="40" rows="8" placeholder="Message" required></textarea></p>
+        <button>Send</button>
+      </form>
+    </section>
+  </main>
+  <footer id="page-footer">
+    <p class="github">
+      <a href="#">
+        <svg><use xlink:href="assets/img/icons.svg#icon-github"></use></svg>
+        <span>View project on Github</span>
+      </a>
+    </p>
+    <p class="copyright">// Copyright &copy; 2016 Tim Grillage</p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="assets/scripts.js?v=1.0"></script>
+</body>
+</html>

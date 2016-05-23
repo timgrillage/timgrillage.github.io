@@ -1,0 +1,175 @@
+#page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  .inner-container {
+    @include clearfix();
+    border-bottom: 1px solid $bg-light;
+    background-color: #fff;
+    padding: 1rem $padding-xxs;
+  }
+
+  #logo {
+    width: 80%;
+    float: left;
+    @include headingFont();
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0;
+
+    a {
+      color: #000;
+
+      &:hover {
+        color: $highlight;
+      }
+    }
+  }
+}
+
+main {
+  overflow: hidden;
+  z-index: 1;
+}
+
+section {
+  @include clearfix();
+  background-color: #fff;
+  padding: 2rem $padding-xxs;
+
+  &#home {
+    padding: 0;
+  }
+
+  p:last-child {
+    padding-bottom: 0;
+  }
+}
+
+#page-footer {
+  background-color: #333;
+  font-size: 0.875rem;
+  padding: 1rem $padding-xxs;
+  overflow: hidden;
+
+  p {
+    line-height: 1.5rem;
+    color: #cfcecb;
+    padding: 0.5rem 0;
+
+    &.copyright {
+      width: 80%;
+      float: left;
+    }
+
+    &.github {
+      width: 20%;
+      float: right;
+      text-align: right;
+
+      span {
+        display: none;
+        vertical-align: top;
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    line-height: 1.5rem;
+    color: #cfcecb;
+    
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: #cfcecb;
+      vertical-align: top;
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      color: $highlight;
+    }
+
+    &:hover svg {
+      fill: $highlight;
+    }
+  }
+}
+
+
+// ==================================================
+// Responsive
+// ==================================================
+
+@include breakpoint(xs) { // 360px
+  #page-header .inner-container,
+  #page-footer {
+    padding: 1rem $padding-xs;
+  }
+
+  section {
+    padding: 2rem $padding-xs;
+  }
+}
+
+@include breakpoint(sm) { // 640px
+  #page-header .inner-container,
+  #page-footer {
+    padding: 1rem $padding-sm;
+  }
+
+  #page-footer {
+    p.copyright {
+      width: 50%;
+    }
+
+    p.github {
+      width: 50%;
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  section {
+    padding: 2rem $padding-sm;
+  }
+}
+
+@include breakpoint(md) { // 768px
+  #page-header .inner-container,
+  #page-footer {
+    padding: 1.5rem $padding-md;
+  }
+
+  #page-header #logo {
+    width: 25%;
+    line-height: 2.5rem;
+  }
+
+  section {
+    padding: 2rem $padding-md;
+  }
+}
+
+@include breakpoint(lg) { // 1024px
+  main, #page-footer, .inner-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
+  #page-header .inner-container,
+  #page-footer {
+    padding: 1.5rem $padding-lg;
+  }
+
+  section {
+    padding: $padding-lg;
+  }
+}

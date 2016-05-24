@@ -24,7 +24,7 @@
       color: #000;
       padding: 1rem $padding-xxs;
 
-      &:hover {
+      &:not(.no-hover):hover {
         color: $highlight;
       }
     }

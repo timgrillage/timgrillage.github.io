@@ -35,12 +35,6 @@
     height: auto;
     margin: 0 auto 1rem;
   }
-
-  .photo, .text {
-    &.revealed {
-      animation: fadeInUp 0.5s;
-    }
-  }
 }
 
 
@@ -145,7 +139,7 @@
       padding: 0.5rem;
       cursor: pointer;
 
-      &:not(.touch):hover svg {
+      &:not(.no-hover):hover svg {
         fill: $highlight;
       }
     }
@@ -170,7 +164,6 @@
     left: 0;
     background-color: rgba(#333, 0.85);
     color: #fff;
-    fill: currentColor;
     padding: 1rem;
 
     li {
@@ -181,6 +174,7 @@
         height: 1.5rem;
         vertical-align: top;
         margin-right: 0.5rem;
+        fill: currentColor;
       }
 
       a {

@@ -199,11 +199,21 @@ $('.project h3 span').on('click', function() {
     }
 });
 
+
+// ==================================================
 // Prevent sticky hover on touch screen devices
-$('.project h3 span').on('touchstart', function() {
-    $(this).addClass('touch');
-}).on('touchend', function() {
-    $(this).removeClass('touch');        
+// ==================================================
+
+$('#logo a, .project h3 span').on('touchend touchcancel', function() {
+    $(this).addClass('no-hover');
+}).on('touchstart mouseover', function() {
+    $(this).removeClass('no-hover');        
+});
+
+
+// Temporarily disable dead project links
+$('.project .details a').on('click', function(e) {
+    e.preventDefault();
 });
 
 

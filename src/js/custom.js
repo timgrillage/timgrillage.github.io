@@ -70,7 +70,7 @@ $('#menu-icon').on('click', function() {
 });
 
 // Menu links - click action
-$('#main-menu, #logo').on('click', 'a', function(e) {
+$('#main-menu a, #logo a').on('click', function(e) {
 
     // If less than 768px wide (essentially if mobile)
     if (!mqw.matches) {
@@ -169,7 +169,7 @@ $(window).on('scroll', function() {
 // Show / hide project details
 // ==================================================
 
-$('.project h3').on('click', 'span', function() {
+$('.project h3 span').on('click', function() {
     var $svg = $(this).find('svg'),
         $use = $svg.find('use'),
         $details = $(this).closest('.project').find('.details');

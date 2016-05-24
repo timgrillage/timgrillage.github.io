@@ -15,8 +15,11 @@ var mqw = window.matchMedia('(min-width: 48rem)'), // 768px
 
 
 // Add 'ready' class to 'layers' div when images have loaded
-$('.layers').waitForImages(function() {
-    $(this).addClass('ready');
+$('.layers').waitForImages({
+    finished: function() {
+        $(this).addClass('ready');
+    },
+    waitForAll: true
 });
 
 

@@ -14,6 +14,12 @@ var mqw = window.matchMedia('(min-width: 48rem)'), // 768px
     mqo = window.matchMedia('(orientation: portrait)');
 
 
+// Add 'ready' class to 'layers' div when images have loaded
+$('.layers').waitForImages(function() {
+    $(this).addClass('ready');
+});
+
+
 // ==================================================
 // Reveal elements on scroll
 // ==================================================

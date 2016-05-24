@@ -23,7 +23,7 @@ gulp.task('style', function() {
 // ==================================================
 
 gulp.task('scripts', function() {
-    return gulp.src(['./src/js/picturefill.js', './src/js/svgxuse.js', './src/js/custom.js'])
+    return gulp.src(['./src/js/plugins/*.js', './src/js/custom.js'])
         .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./assets'))

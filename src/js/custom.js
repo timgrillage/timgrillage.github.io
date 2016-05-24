@@ -5,6 +5,10 @@ jQuery('document').ready(function($) { // Start
 $(document.body).addClass('js');
 
 
+// Add FastClick
+FastClick.attach(document.body);
+
+
 // Set media query variables
 var mqw = window.matchMedia('(min-width: 48rem)'), // 768px
     mqo = window.matchMedia('(orientation: portrait)');
@@ -185,6 +189,11 @@ $('.project h3').on('click', 'span', function() {
         });
     }
 });
+
+// Prevent sticky hover on touch screen devices
+// $('.project h3 span').on('touchstart', function() {
+//     $(this).find('svg').css('fill', 'currentColor');
+// });
 
 
 }); // End

@@ -145,7 +145,7 @@
       padding: 0.5rem;
       cursor: pointer;
 
-      &:hover svg {
+      &:not(.touch):hover svg {
         fill: $highlight;
       }
     }
@@ -302,6 +302,20 @@
       background-image: url('img/wireframe.png');
       top: 140px;
     }
+
+    // @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    //   .website {
+    //     background-image: url('img/website-2x.png');
+    //   }
+
+    //   .code {
+    //     background-image: url('img/code-2x.png');
+    //   }
+
+    //   .wireframe {
+    //     background-image: url('img/wireframe-2x.png');
+    //   }
+    // }
     
     // Start animation when images have loaded
     &.ready div {

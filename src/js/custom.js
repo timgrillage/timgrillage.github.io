@@ -5,7 +5,7 @@ jQuery('document').ready(function($) { // Start
 $(document.body).addClass('js');
 
 
-// Add FastClick
+// Add FastClick for touch screen devices
 FastClick.attach(document.body);
 
 
@@ -14,7 +14,7 @@ var mqw = window.matchMedia('(min-width: 48rem)'), // 768px
     mqo = window.matchMedia('(orientation: portrait)');
 
 
-// Add 'ready' class to 'layers' div when images have loaded
+// Add class to 'layers' div when images have loaded
 $('.layers').waitForImages({
     finished: function() {
         $(this).addClass('ready');
@@ -200,9 +200,11 @@ $('.project h3 span').on('click', function() {
 });
 
 // Prevent sticky hover on touch screen devices
-// $('.project h3 span').on('touchstart', function() {
-//     $(this).find('svg').css('fill', 'currentColor');
-// });
+$('.project h3 span').on('touchstart', function() {
+    $(this).addClass('touch');
+}).on('touchend', function() {
+    $(this).removeClass('touch');        
+});
 
 
 }); // End

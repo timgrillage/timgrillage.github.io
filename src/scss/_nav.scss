@@ -1,8 +1,11 @@
 #menu-icon {
+  box-sizing: content-box;
   width: 24px;
   height: 20px;
   float: right;
   position: relative;
+  border: solid #fff;
+  border-width: 1rem $padding-xxs;
   transform: rotate(0deg);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -62,7 +65,7 @@
   @include headingFont();
 
   ul {
-    padding: 2rem 0 1rem;
+    padding: 1rem 0 2rem;
     visibility: hidden;
   }
 
@@ -94,6 +97,18 @@
 // ==================================================
 // Responsive
 // ==================================================
+
+@include breakpoint(xs) { // 360px
+  #menu-icon {
+    border-width: 1rem $padding-xs;
+  }
+}
+
+@include breakpoint(sm) { // 640px
+  #menu-icon {
+    border-width: 1.25rem $padding-sm;
+  }
+}
 
 @include breakpoint(md) { // 768px
   #menu-icon {

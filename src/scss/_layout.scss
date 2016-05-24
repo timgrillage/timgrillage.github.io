@@ -9,7 +9,6 @@
     @include clearfix();
     border-bottom: 1px solid $bg-light;
     background-color: #fff;
-    padding: 1rem $padding-xxs;
   }
 
   #logo {
@@ -21,7 +20,9 @@
     padding: 0;
 
     a {
+      display: inline-block;
       color: #000;
+      padding: 1rem $padding-xxs;
 
       &:hover {
         color: $highlight;
@@ -106,7 +107,7 @@ section {
 // ==================================================
 
 @include breakpoint(xs) { // 360px
-  #page-header .inner-container,
+  #page-header #logo a,
   #page-footer {
     padding: 1rem $padding-xs;
   }
@@ -117,9 +118,9 @@ section {
 }
 
 @include breakpoint(sm) { // 640px
-  #page-header .inner-container,
+  #page-header #logo a,
   #page-footer {
-    padding: 1rem $padding-sm;
+    padding: 1.25rem $padding-sm;
   }
 
   #page-footer {
@@ -145,6 +146,10 @@ section {
   #page-header .inner-container,
   #page-footer {
     padding: 1.5rem $padding-md;
+  }
+
+  #page-header #logo a {
+    padding: 0;
   }
 
   #page-header #logo {

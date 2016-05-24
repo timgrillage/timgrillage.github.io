@@ -3,6 +3,7 @@
 // ==================================================
 
 #home {
+  position: relative;
   background-color: $bg-light;
   margin-top: 3.25rem; // Height of header
   overflow: hidden;
@@ -248,8 +249,7 @@
 @include breakpoint(sm) { // 640px
   .intro {
     width: 60%;
-    float: left;
-    padding: 1.75rem 0 2rem $padding-sm;
+    padding: 1.75rem 1rem 2rem $padding-sm;
   }
 
   @keyframes layers {
@@ -265,38 +265,44 @@
   .layers {
     display: block;
     width: 40%;
-    max-width: 490px;
-    float: right;
-    position: relative;
-    
-    // Force 'layers' div height to be 110% of width
-    &:before {
-      content: '';
-      display: block;
-      height: 0;
-      padding-bottom: 110%;
-    }
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
 
-    img {
+    div {
       width: 100%;
-      height: auto;
+      max-width: 400px;
       position: absolute;
       right: -100%;
+      background: right top no-repeat;
+      background-size: contain;
       animation: layers 0.3s ease-out 0s 1 forwards;
       -webkit-transform: translate3d(0, 0, 0); // Fix Safari rendeing issue during animation
+
+      // Force div height to be 100% of width
+      &:before {
+        content: '';
+        display: block;
+        height: 0;
+        padding-bottom: 100%;
+      }
     }
 
     .website {
+      background-image: url('img/website.png');
       top: 20px;
       animation-delay: 0.6s;
     }
 
     .code {
+      background-image: url('img/code.png');
       top: 80px;
       animation-delay: 0.3s;
     }
 
     .wireframe {
+      background-image: url('img/wireframe.png');
       top: 140px;
     }
   }
@@ -325,9 +331,7 @@
 
 @include breakpoint(md) { // 768px
   .intro {
-    width: 60%;
-    float: left;
-    padding: 1.75rem 0 2rem $padding-md;
+    padding: 1.75rem 1rem 2rem $padding-md;
 
     p {
       padding-right: 2rem;
@@ -339,13 +343,6 @@
   }
 
   .layers {
-    width: 40%;
-    max-width: 490px;
-
-    &:before {
-      padding-bottom: 110%;
-    }
-
     .website {
       top: 20px;
     }
@@ -421,7 +418,7 @@
 
 @include breakpoint(lg) { // 1024px
   .intro {
-    padding: 2.5rem 0 3rem $padding-lg;
+    padding: 2.5rem 1rem 3rem $padding-lg;
 
     p {
       max-width: 36rem;

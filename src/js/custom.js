@@ -123,22 +123,6 @@ $('#main-menu a, #logo a').on('click', function(e) {
     e.preventDefault();
 });
 
-/*
-// Move underline to hovered link
-$menu.on('mouseenter', 'a', function () {
-    $('#main-menu ul hr').css({
-        width: $(this).outerWidth() + 'px',
-        left: ( $(this).offset().left - $menu.offset().left ) + 'px'
-    });
-}).on('mouseleave', function () {
-    var $active = $menu.find('.active');
-    $('#main-menu ul hr').css({
-        width: $active.outerWidth() + 'px',
-        left: ( $active.offset().left - $menu.offset().left ) + 'px'
-    });
-})
-*/
-
 // Move menu underline on manual page scroll
 $(window).on('scroll', function() {
 

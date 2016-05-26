@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
 // ==================================================
 
 gulp.task('imagemin', function() {
-    return gulp.src('./src/img/*.png')
+    return gulp.src('./src/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./assets/img'));
 });

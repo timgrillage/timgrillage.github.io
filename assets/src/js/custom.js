@@ -1,6 +1,7 @@
 jQuery('document').ready(function($) {
     
-    var $body = $(document.body).addClass('js');
+    // Add 'js' class to body if JavaScript enabled
+    $(document.body).addClass('js');
 
 
     // Add FastClick plugin for touch screen devices
@@ -54,7 +55,7 @@ jQuery('document').ready(function($) {
         // If >= 768px wide (if tablet / desktop)
         else {
             // Add class to body while it's auto scrolling
-            $body.addClass('scrolling');
+            $(document.body).addClass('scrolling');
 
             if ( $(this).parent().attr('id') == 'logo' ) {
                 $clicked = $menu.find('a[href="#home"]');
@@ -80,7 +81,7 @@ jQuery('document').ready(function($) {
         $('html, body').animate({
             scrollTop: $targetOffset - $headerHeight
         }, 600, function() {
-            $body.removeClass('scrolling');
+            $(document.body).removeClass('scrolling');
         });
 
         return false;
@@ -141,7 +142,7 @@ jQuery('document').ready(function($) {
         // Move menu underline to current section on manual page scroll
         $(window).on('scroll', function() {
             // Only do this if the page is not auto scrolling from a menu click
-            if ( !$body.hasClass('scrolling') ) {
+            if ( !$(document.body).hasClass('scrolling') ) {
                 underline();
             }
         }); 

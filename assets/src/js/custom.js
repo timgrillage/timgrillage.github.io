@@ -1,11 +1,11 @@
 jQuery('document').ready(function($) {
-
+    
 
     var $body = $(document.body).addClass('js');
 
 
     // Add FastClick plugin for touch screen devices
-    FastClick.attach($body);
+    //FastClick.attach($body);
 
 
     // Set media query variables

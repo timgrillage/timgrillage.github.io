@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 // ==================================================
 
 gulp.task('style', function() {
-    return gulp.src('./src/scss/style.scss')
+    return gulp.src('./assets/src/scss/style.scss')
         .pipe(sass({
             outputStyle: 'compressed'
         }))
@@ -23,7 +23,7 @@ gulp.task('style', function() {
 // ==================================================
 
 gulp.task('scripts', function() {
-    return gulp.src(['./src/js/plugins/*.js', './src/js/custom.js'])
+    return gulp.src(['./assets/src/js/plugins/*.js', './assets/src/js/custom.js'])
         .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./assets'))
@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
 // ==================================================
 
 gulp.task('imagemin', function() {
-    return gulp.src('./src/img/*')
+    return gulp.src('./assets/src/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./assets/img'));
 });
@@ -42,8 +42,8 @@ gulp.task('imagemin', function() {
 
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch('./src/scss/**/*.scss', ['style']);
-    gulp.watch('./src/js/custom.js', ['scripts']);
+    gulp.watch('./assets/src/scss/**/*.scss', ['style']);
+    gulp.watch('./assets/src/js/custom.js', ['scripts']);
 });
 
 // ==================================================

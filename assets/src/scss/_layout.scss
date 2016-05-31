@@ -8,7 +8,7 @@
   .inner-container {
     @include clearfix();
     border-bottom: 1px solid $bg-light;
-    background-color: #fff;
+    background-color: rgba(#fff, 0.95);
   }
 
   #logo {
@@ -32,13 +32,13 @@
 }
 
 main {
+  background-color: #fff;
   overflow: hidden;
   z-index: 1;
 }
 
 section {
   @include clearfix();
-  background-color: #fff;
   padding: 2rem $padding-xxs;
 
   &#home {

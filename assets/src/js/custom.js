@@ -1,16 +1,16 @@
 jQuery('document').ready(function($) {
     
-    // Add 'js' class to body if JavaScript enabled
-    $(document.body).addClass('js');
-
-
     // Add FastClick plugin for touch screen devices
     FastClick.attach(document.body);
 
 
+    // Add 'js' class to body if JavaScript enabled
+    $(document.body).addClass('js');
+
+
     // Set media query variables
-    var mqw = window.matchMedia('(min-width: 48rem)'), // 768px
-        mqo = window.matchMedia('(orientation: portrait)');
+    var mqw = window.matchMedia('(min-width: 48rem)'); // 768px
+    var mqo = window.matchMedia('(orientation: landscape)');
 
 
     // Add class to 'layers' div when images have loaded
@@ -26,8 +26,8 @@ jQuery('document').ready(function($) {
     // Navigation menu
     // ==================================================
 
-    var $menu   = $('#main-menu'),
-        $header = $('#page-header');
+    var $menu   = $('#main-menu');
+    var $header = $('#page-header');
 
     // Mobile menu icon
     $('#menu-icon').on('click', function() {
@@ -92,16 +92,16 @@ jQuery('document').ready(function($) {
         var $winTop = $(window).scrollTop();
 
         $('section').each(function() {
-            var $secTop = $(this).offset().top - $header.outerHeight(),
-                $secBot = $secTop + $(this).outerHeight();
+            var $secTop = $(this).offset().top - $header.outerHeight();
+            var $secBot = $secTop + $(this).outerHeight();
 
             // Only do this for current section
             if ( $winTop >= $secTop && $winTop < $secBot ) {
 
                 // Get details of menu link for current section
-                var $link  = $menu.find('a[href="#' + this.id + '"]'),
-                    $width = $link.outerWidth() + 'px',
-                    $left  = ($link.offset().left - $menu.offset().left) + 'px';
+                var $link  = $menu.find('a[href="#' + this.id + '"]');
+                var $width = $link.outerWidth() + 'px';
+                var $left  = ($link.offset().left - $menu.offset().left) + 'px';
 
                 if( !$menu.find('hr').length ) { // If page loaded
 
@@ -153,29 +153,37 @@ jQuery('document').ready(function($) {
     // Reveal elements on scroll
     // ==================================================
 
-    function reveal() {
-        // Set distance before animated elements are revealed
-        if (mqo.matches) {
-            var $distance = 0.9; // Portrait - 10%
-        } else {
-            var $distance = 0.85; // Landscape - 15%
-        }
+    // Set distance into window before animated elements are revealed
+    var $window    = $(window);
+    var $distance  = mqo.matches ? 0.85 : 0.9; // 15% for landscape / 10% for portrait
+    var $winHeight = $window.height() * $distance;
+    var $animated  = $('section').find('.animated, header');
 
-        var $scrolled = $(window).scrollTop(),
-            $height = $(window).height() * $distance;
+    function reveal(event) {
+        var $scrolled = $window.scrollTop();
 
-        $('section').find('.animated:not(.revealed), header:not(.revealed)').each(function () {
-            if ( ($scrolled + $height) > $(this).offset().top ) {
-                $(this).addClass('revealed');
+        // If initial page load then reveal elements without animation
+        var $animClass = (event === 'init') ? 'show' : 'revealed';
+
+        $animated.each(function() {
+            var $this = $(this);
+
+            // If element far enough into view
+            if ( ($scrolled + $winHeight) > $this.offset().top ) {
+
+                // If it hasn't already been revealed on load or scroll
+                if ( !$this.hasClass('show') && !$this.hasClass('revealed') )  {
+                    $this.addClass($animClass);
+                }
             }
         });
     }
 
-    // Reveal elements already in viewport on load
-    reveal();
+    // Reveal elements already in viewport on page load
+    reveal('init');
 
     // Reveal elements when scrolled into viewport
-    $(window).on('scroll', reveal);
+    $window.on('scroll', reveal);
 
 
     // ==================================================
@@ -183,9 +191,10 @@ jQuery('document').ready(function($) {
     // ==================================================
 
     $('#work h3 span').on('click', function() {
-        var $svg     = $(this).find('svg'),
-            $use     = $svg.find('use'),
-            $details = $(this).closest('.project').find('.details');
+        var $this    = $(this);
+        var $svg     = $this.find('svg');
+        var $use     = $svg.find('use');
+        var $details = $this.closest('.project').find('.details');
         
         if ( !$details.hasClass('open') ) {
             $details.slideDown(300, function() {
@@ -204,8 +213,8 @@ jQuery('document').ready(function($) {
     });
 
     // Temporarily disable dead project links
-    $('#work .details a').on('click', function(e) {
-        e.preventDefault();
+    $('#work .details').on('click', 'a[href="#"]', function() {
+        return false;
     });
 
 
@@ -218,6 +227,5 @@ jQuery('document').ready(function($) {
     }).on('touchstart mouseover', function() {
         $(this).removeClass('no-hover');        
     });
-
 
 });

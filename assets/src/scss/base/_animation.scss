@@ -55,7 +55,7 @@
 .js .animated, .js section header {
   visibility: hidden;
 
-  &.revealed {
+  &.revealed, &.show {
     visibility: visible;
   }
 }

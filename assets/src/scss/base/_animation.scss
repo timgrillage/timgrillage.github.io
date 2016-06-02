@@ -1,3 +1,19 @@
+// If JS enabled, hide animated elements until revealed
+.js {
+  section:not(#home) > * {
+    visibility: hidden;
+
+    &.revealed, &.no-anim {
+      visibility: visible;
+    }
+  }
+}
+
+// Set default animation
+.revealed {
+  animation: fadeIn 0.8s;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -48,21 +64,5 @@
 
   50% {
     opacity: 1;
-  }
-}
-
-// If JS enabled, hide animated elements until revealed
-.js .animated, .js section header {
-  visibility: hidden;
-
-  &.revealed, &.show {
-    visibility: visible;
-  }
-}
-
-// Set default animation
-.animated, section header {
-  &.revealed {
-    animation: fadeIn 0.8s;
   }
 }

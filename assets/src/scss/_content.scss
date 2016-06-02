@@ -28,6 +28,10 @@
 // ==================================================
 
 #about {
+  picture {
+    display: block;
+  }
+  
   .photo {
     display: block;
     width: 100%;
@@ -367,10 +371,10 @@
       height: auto;
       float: left;
       margin-bottom: 0;
+    }
 
-      &.revealed {
-        animation: fadeInLeft 0.5s;
-      }
+    picture.revealed {
+      animation: fadeInLeft 0.5s;
     }
 
     .text {

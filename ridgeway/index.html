@@ -17,7 +17,7 @@
     <div class="nav-wrapper">
       <ul>
         <li><a href="#">About Us</a></li>
-        <span><!-- See notes -->
+        <span><!-- <span> added to improve link spacing (see notes) -->
           <li><a href="#">Contacts</a></li>
           <li><a href="#" class="active">Loss Prevention</a></li>
           <li><a href="#">Publications</a></li>
@@ -77,14 +77,15 @@
     </div>
   </main>
   <section class="search-boxes" role="search">
+    <!-- Extra "inner-container" div required to align boxes -->
     <div class="inner-container">
       <form>
         <h3>Vessel Search</h3>
         <div class="box-content">
           <p>Enter IMO number or name in the search box:</p>
-          <div class="form-row">
+          <div class="input-wrapper">
             <input type="text" placeholder="Search for a vessel">
-            <button type="submit" aria-label="search"><i class="icon icon-search"></i></button>
+            <button type="submit" aria-label="Search"><i class="icon icon-search"></i></button>
           </div>
         </div>
       </form>
@@ -92,9 +93,9 @@
         <h3>Correspondents</h3>
         <div class="box-content">
           <p>Search by country, port, name (or part of name):</p>
-          <div class="form-row">
+          <div class="input-wrapper">
             <input type="text" placeholder="Search for correspondents">
-            <button type="submit" aria-label="search"><i class="icon icon-search"></i></button>
+            <button type="submit" aria-label="Search"><i class="icon icon-search"></i></button>
           </div>
         </div>
       </form>
@@ -102,7 +103,7 @@
         <h3>Contacts</h3>
         <div class="box-content">
           <p>Find contact information for all offices and staff:</p>
-          <div class="form-row select-wrapper">
+          <div class="select-wrapper">
             <select>
               <option value="" disabled selected>Select a country</option>
               <option value="">Option 1</option>
@@ -131,6 +132,6 @@
     </div>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="assets/js/scripts.js?v=1.1"></script>
+  <script src="assets/js/scripts.js?v=1.0"></script>
 </body>
 </html>

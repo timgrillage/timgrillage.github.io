@@ -42,13 +42,15 @@
         <div class="content-inner">
           <h1>DNVPS Bunker Alerts</h1>
           <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque, metus non suscipit ultrices, urna diam varius lectus, ut viverra lectus metus id augue. Integer eget lacus id ante pellentesque facilisis a vitae ligula. Morbi felis turpis, sagittis vel tristique a, eleifend bibendum urna. Integer sed eros molestie, sollicitudin neque ac, rutrum lorem. Integer at tincidunt elit, vel suscipit nisi. Integer varius nisl ac consectetur eleifend. Nullam posuere lorem lorem, quis pellentesque mauris euismod ut.</p>
-          <picture>
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="assets/img/dnv.png, assets/img/dnv@2x.png 2x" media="(max-width: 767px)">
-            <source srcset="assets/img/dnv-lg.png, assets/img/dnv-lg@2x.png 2x" media="(min-width: 768px)">
-            <!--[if IE 9]></video><![endif]-->
-            <img srcset="assets/img/dnv.png, assets/img/dnv@2x.png 2x" alt="DNV logo" class="left">
-          </picture>
+          <figure class="left">
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="assets/img/dnv.png, assets/img/dnv@2x.png 2x" media="(max-width: 767px)">
+              <source srcset="assets/img/dnv-lg.png, assets/img/dnv-lg@2x.png 2x" media="(min-width: 768px)">
+              <!--[if IE 9]></video><![endif]-->
+              <img srcset="assets/img/dnv.png, assets/img/dnv@2x.png 2x" alt="DNV logo">
+            </picture>
+          </figure>
           <p>Morbi vel leo et felis vulputate ultrices sed quis dui. Ut id mi non ante bibendum scelerisque vitae ut sem. Vestibulum elementum enim a velit ultricies, ac euismod sapien tincidunt. Cras egestas ultrices suscipit. Vivamus auctor lacus in tortor placerat commodo. Pellentesque suscipit massa id ipsum vestibulum, eu luctus quam cursus. Praesent pellentesque dui vel molestie fringilla. Nam elit mauris, pretium in sagittis id, varius vel lectus.</p>
           <p>Nunc cursus cursus mi nec tristique. Duis in nibh ut ex pulvinar varius gravida sed ipsum. Suspendisse consectetur lobortis gravida. Morbi venenatis elit non quam malesuada, a condimentum dui gravida. Nulla non dictum magna, at pretium neque. Quisque varius odio felis, a pharetra mauris facilisis eget. Aenean a tortor finibus, mollis orci vel, consequat tortor. Ut feugiat pharetra urna, at cursus metus semper at. Pellentesque eu lorem quis odio luctus interdum in eget tellus. Phasellus consequat est non orci suscipit, non convallis tortor ultricies. Sed tincidunt ipsum a eros viverra ultrices.</p>
           <p>Sed vestibulum felis eget lectus euismod gravida. Mauris nulla felis, feugiat vitae purus at, pellentesque vehicula ipsum. Ut id ipsum non orci rutrum semper. Ut quis convallis libero. Nulla suscipit semper nisi, ac condimentum tortor tristique sit amet. Sed semper est id sodales gravida. Curabitur in posuere nisi, eget blandit mauris.</p>
@@ -77,8 +79,8 @@
     </div>
   </main>
   <section class="search-boxes" role="search">
-    <!-- Extra "inner-container" div required to align boxes -->
-    <div class="inner-container">
+    <!-- Extra "wrapper" div required to remove left margin from first box but retain equal widths for all boxes -->
+    <div class="search-boxes-wrapper">
       <form>
         <h3>Vessel Search</h3>
         <div class="box-content">
@@ -117,18 +119,15 @@
     </div>
   </section>
   <footer class="site-footer">
-    <!-- Extra "inner-container" div required to move left gold border in 10px from edge -->
-    <div class="inner-container">
-      <div class="site-footer-content">
-        <ul class="site-info">
-          <li>&copy; 2016 West of England</li>
-          <li><a href="#">Disclaimer</a></li>
-          <li><a href="#">Copyright</a></li>
-          <li><a href="#">SiteMap</a></li>
-          <li><a href="#">Cookie Policy &amp; Settings</a></li>
-          <li><a href="#">Web design by Ridgeway</a></li>
-        </ul>
-      </div>
+    <div class="site-footer-content">
+      <ul class="site-info">
+        <li>&copy; 2016 West of England</li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">Copyright</a></li>
+        <li><a href="#">SiteMap</a></li>
+        <li><a href="#">Cookie Policy &amp; Settings</a></li>
+        <li><a href="#">Web design by Ridgeway</a></li>
+      </ul>
     </div>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

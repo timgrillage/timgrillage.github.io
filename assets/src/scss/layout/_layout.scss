@@ -6,7 +6,7 @@
   z-index: 2;
 
   .inner-container {
-    @include clearfix();
+    @include clearfix;
     border-bottom: 1px solid $bg-light;
     background-color: rgba(#fff, 0.95);
   }
@@ -14,7 +14,7 @@
   #logo {
     width: 75%;
     float: left;
-    @include headingFont();
+    @include headingFont;
     font-size: 1.25rem;
     line-height: 1;
     padding: 0;
@@ -24,7 +24,7 @@
       color: #000;
       padding: 1rem $padding-xxs;
 
-      &:not(.no-hover):hover {
+      &:not(.no-hover):hover, &:not(.no-hover):focus {
         color: $highlight;
       }
     }
@@ -38,7 +38,7 @@ main {
 }
 
 section {
-  @include clearfix();
+  @include clearfix;
   padding: 2rem $padding-xxs;
 
   &#home {
@@ -91,12 +91,12 @@ section {
       margin-right: 0.5rem;
     }
 
-    &:hover {
+    &:hover, &:focus {
       color: $highlight;
-    }
 
-    &:hover svg {
-      fill: $highlight;
+      svg {
+        fill: $highlight;
+      }
     }
   }
 }
@@ -106,7 +106,7 @@ section {
 // Responsive
 // ==================================================
 
-@include breakpoint(xs) { // 360px
+@include breakpoint(xs) {
   #page-header #logo a,
   #page-footer {
     padding: 1rem $padding-xs;
@@ -117,7 +117,7 @@ section {
   }
 }
 
-@include breakpoint(sm) { // 640px
+@include breakpoint(sm) {
   #page-header #logo a,
   #page-footer {
     padding: 1.25rem $padding-sm;
@@ -142,7 +142,7 @@ section {
   }
 }
 
-@include breakpoint(md) { // 768px
+@include breakpoint(md) {
   #page-header .inner-container,
   #page-footer {
     padding: 1.5rem $padding-md;
@@ -162,7 +162,7 @@ section {
   }
 }
 
-@include breakpoint(lg) { // 1024px
+@include breakpoint(lg) {
   main, #page-footer, .inner-container {
     width: 100%;
     max-width: 64rem;

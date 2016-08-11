@@ -22,7 +22,7 @@ form {
   button {
     border: none;
     background-color: #333;
-    @include headingFont();
+    @include headingFont;
     color: #fff;
     font-size: 0.875rem;
     font-weight: bold;
@@ -32,7 +32,7 @@ form {
     padding: 0.714em 1em;
     transition: all 0.3s;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: $highlight;
       color: #222;
     }

@@ -143,8 +143,10 @@
       padding: 0.5rem;
       cursor: pointer;
 
-      &:not(.no-hover):hover svg {
-        fill: $highlight;
+      &:not(.no-hover):hover, &:not(.no-hover):focus {
+        svg {
+          fill: $highlight;
+        }
       }
     }
     
@@ -232,7 +234,7 @@
 // Responsive
 // ==================================================
 
-@include breakpoint(xs) { // 360px
+@include breakpoint(xs) {
   .intro {
     padding: 1.75rem $padding-xs 2rem;
   }
@@ -244,7 +246,7 @@
   }
 }
 
-@include breakpoint(sm) { // 640px
+@include breakpoint(sm) {
   .intro {
     width: 60%;
     padding: 1.75rem 1rem 2rem $padding-sm;
@@ -351,7 +353,7 @@
   }
 }
 
-@include breakpoint(md) { // 768px
+@include breakpoint(md) {
   .intro {
     padding: 1.75rem 0 2rem $padding-md;
 
@@ -424,7 +426,7 @@
   }
 }
 
-@media (min-width: 52.5rem) { // 840px
+@media (min-width: 52.5rem) {
   .layers {
     .code {
       top: 100px;
@@ -436,7 +438,7 @@
   }
 }
 
-@include breakpoint(lg) { // 1024px
+@include breakpoint(lg) {
   .intro {
     padding: 2.5rem 1rem 3rem $padding-lg;
 

@@ -1,9 +1,12 @@
-*, *:before, *:after {
+html{
   box-sizing: border-box;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 :focus {
-  box-shadow: none;
   outline: none;
 }
 
@@ -30,8 +33,12 @@ a {
   color: $highlight;
   text-decoration: none;
 
-  &:hover {
+  &:hover, &:focus {
     color: #000;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -46,8 +53,8 @@ ul {
 // Headings
 // ==================================================
 
-h1, h2, h3, h4, h5, h6 {
-  @include headingFont();
+h1, h2, h3 {
+  @include headingFont;
   font-weight: bold;
   margin: 0 0 0.5em;
 }
@@ -122,13 +129,13 @@ h3 {
 // Responsive
 // ==================================================
 
-@media (min-width: 22.5rem) { // 360px
+@media (min-width: 22.5rem) {
   h1 {
     font-size: 2.5rem;
   }
 }
 
-@include breakpoint(sm) { // 640px
+@include breakpoint(sm) {
   h1 {
     font-size: 2.625rem;
   }
@@ -143,7 +150,7 @@ h3 {
   }
 }
 
-@include breakpoint(md) { // 768px
+@include breakpoint(md) {
   h1 {
     font-size: 3rem;
   }
@@ -153,7 +160,7 @@ h3 {
   }
 }
 
-@include breakpoint(lg) { // 1024px
+@include breakpoint(lg) {
   body {
     font-size: 1rem;
     line-height: 1.625;

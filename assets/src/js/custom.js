@@ -1,4 +1,5 @@
 (function($) {
+    'use strict';
 
     // Add 'js' class to body if JavaScript enabled
     $(document.body).addClass('js');
@@ -196,36 +197,39 @@
     // Show / hide project details
     // ==================================================
 
-    $('#work h3 span').on('click', toggleDetails);
+    $('#work h3 span').on('click keydown', toggleDetails);
 
     // Temporarily disable dead project links
     $('#work .details').on('click', 'a[href="#"]', function() {
         return false;
     });
 
-    function toggleDetails() {
+    function toggleDetails(e) {
         var $this    = $(this);
         var $svg     = $this.find('svg');
         var $use     = $svg.find('use');
         var $details = $this.closest('.project').find('.details');
         
-        // Show details
-        if ( !$details.hasClass('open') ) {
-            $details.slideDown(300, function() {
-                var $icon = $use.attr('xlink:href').replace('icon-info', 'icon-cancel');
-                $use.attr('xlink:href', $icon);
-                $svg.addClass('small');
-                $(this).addClass('open');
-            });
-        }
-        
-        // Hide details
-        else {
-            $details.removeClass('open').slideUp(300, function() {
-                var $icon = $use.attr('xlink:href').replace('icon-cancel', 'icon-info');
-                $use.attr('xlink:href', $icon);
-                $svg.removeClass('small');
-            });
+        if (e.type == 'click' || e.which == 13) {
+
+            // Show details
+            if ( !$details.hasClass('open') ) {
+                $details.slideDown(300, function() {
+                    var $icon = $use.attr('xlink:href').replace('icon-info', 'icon-cancel');
+                    $use.attr('xlink:href', $icon);
+                    $svg.addClass('small');
+                    $(this).addClass('open');
+                });
+            }
+            
+            // Hide details
+            else {
+                $details.removeClass('open').slideUp(300, function() {
+                    var $icon = $use.attr('xlink:href').replace('icon-cancel', 'icon-info');
+                    $use.attr('xlink:href', $icon);
+                    $svg.removeClass('small');
+                });
+            }
         }
     }
 

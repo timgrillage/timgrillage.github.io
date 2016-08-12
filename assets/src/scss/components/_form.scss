@@ -1,46 +1,45 @@
-form {
-  input, textarea {
-    display: block;
-    width: 100%;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-    background-color: #f2f2f2;
-    color: $text-dark;
-    padding: 0.75em;
 
-    &:focus {
-      box-shadow: 0 0 0 2px #eee inset;
-      background-color: #fff;
-    }
+input, textarea {
+  display: block;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  background-color: #f2f2f2;
+  color: $text-dark;
+  padding: 0.75em;
+
+  &:focus {
+    box-shadow: 0 0 0 2px #eee inset;
+    background-color: #fff;
   }
+}
 
-  input {
-    max-width: 24em;
-  }
+input {
+  max-width: 24em;
+}
 
-  button {
-    border: none;
-    background-color: #333;
-    @include headingFont;
-    color: #fff;
-    font-size: 0.875rem;
-    font-weight: bold;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 0.714em 1em;
-    transition: all 0.3s;
+button {
+  @include headingFont;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.714em 1em;
+  transition: all 0.3s;
 
-    &:hover, &:focus {
-      background-color: $highlight;
-      color: #222;
-    }
+  &:hover, &:focus {
+    background-color: $highlight;
+    color: #222;
   }
 }
 
 // ==================================================
-// Responsive
+// Media queries
 // ==================================================
 
 @include breakpoint(sm) {
@@ -48,17 +47,17 @@ form {
     p {
       padding-bottom: 1.5rem;
     }
+  }
 
-    input {
-      max-width: 22em;
-    }
+  input {
+    max-width: 22em;
+  }
 
-    textarea {
-      max-width: 44em;
-    }
+  textarea {
+    max-width: 44em;
+  }
 
-    button {
-      padding: 0.785em 1em;
-    }
+  button {
+    padding: 0.785em 1em;
   }
 }

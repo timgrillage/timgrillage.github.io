@@ -1,10 +1,10 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    prefix = require('gulp-autoprefixer'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    livereload = require('gulp-livereload');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
+var livereload = require('gulp-livereload');
     
 // ==================================================
 

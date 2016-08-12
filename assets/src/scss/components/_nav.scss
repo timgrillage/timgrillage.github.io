@@ -60,9 +60,9 @@
 }
 
 #main-menu {
+  @include headingFont;
   display: none;
   clear: both;
-  @include headingFont;
 
   ul {
     padding: 0.5rem 0 1.5rem;
@@ -95,7 +95,7 @@
 
 
 // ==================================================
-// Responsive
+// Media queries
 // ==================================================
 
 @include breakpoint(xs) {

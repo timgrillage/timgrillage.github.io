@@ -1,0 +1,47 @@
+// ==================================================
+// Clearfix
+// ==================================================
+
+@mixin clearfix() {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// ==================================================
+// Headings
+// ==================================================
+
+@mixin headingFont() {
+  font-family: 'Montserrat', sans-serif;
+  color: $text-dark;
+}
+
+
+// ==================================================
+// Responsive breakpoints
+// ==================================================
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media (min-width: rem(360px)) { @content; }
+  }
+
+  @if $point == sm {
+    @media (min-width: rem(640px)) { @content; }
+  }
+
+  @if $point == md {
+    @media (min-width: rem(768px)) { @content; }
+  }
+
+  @if $point == lg {
+    @media (min-width: rem(1024px)) { @content; }
+  }
+}

@@ -1,0 +1,33 @@
+/*==================================================*
+  Clearfix
+ *==================================================*/
+
+@mixin clearfix() {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+/*==================================================*
+  Responsive breakpoints
+ *==================================================*/
+
+@mixin breakpoint($point) {
+  @if $point == sm {
+    @media (min-width: 40rem) { @content; }
+  }
+
+  @if $point == md {
+    @media (min-width: 48rem) { @content; }
+  }
+
+  @if $point == lg {
+    @media (min-width: 64rem) { @content; }
+  }
+}

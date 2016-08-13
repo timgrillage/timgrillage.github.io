@@ -1,0 +1,47 @@
+.site-header {
+  @include clearfix;
+  border-bottom: 3px solid $detailing-line-color;
+  background-color: #007fab;
+  color: #fff;
+  padding: 0 $page-side-padding;
+
+  a {
+    color: #d9ecf3;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:focus {
+      outline-color: #fff;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  width: 202px;
+  margin: 10px auto;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/*==================================================*
+  Media queries
+ *==================================================*/
+ 
+@include breakpoint(sm) {
+  .site-header {
+    padding: 0 $page-side-padding-sm;
+  }
+
+  .logo {
+    width: 245px;
+    margin: 13px 0;
+  }
+}

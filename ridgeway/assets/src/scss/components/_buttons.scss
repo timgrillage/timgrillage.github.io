@@ -1,0 +1,9 @@
+button, .button {
+  border: none;
+  background-color: $button-bg-color;
+  color: $button-font-color;
+
+  &:not(.toggle-nav):hover {
+    background-color: $button-hover-bg-color;
+  }
+}

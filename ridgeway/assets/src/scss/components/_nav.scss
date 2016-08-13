@@ -1,0 +1,295 @@
+/*==================================================*
+  Navigation variables
+ *==================================================*/
+
+// Primary nav links on small screens (when menu is vertical)
+$primary-link-bg-color--mob: #d9ecf3;
+$primary-link-text-color--mob: #01526a;
+
+$primary-link-hover-bg-color--mob: #339dba;
+$primary-link-hover-text-color--mob: #fff;
+
+
+// Primary nav links on larger screens (when menu is horizontal)
+$primary-link-bg-color: transparent;
+$primary-link-text-color: #01526a;
+
+$primary-link-hover-bg-color: transparent;
+$primary-link-hover-text-color: #0084a9;
+
+
+// Secondary nav links
+$secondary-link-bg-color: #d9ecf3;
+$secondary-link-text-color: #0084a9;
+
+$secondary-link-hover-bg-color: #339dba;
+$secondary-link-hover-text-color: #fff;
+
+
+/*==================================================*
+  Navigation placeholder
+ *==================================================*/
+
+%nav {
+  ul {
+    padding: 10px $page-side-padding 7px;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  a {
+    display: block;
+    font-size: 1.125rem;
+    padding: 6px 10px;
+
+    &:focus {
+      outline-width: 0;
+      background-color: $button-hover-bg-color;
+    }
+  }
+}
+
+
+/*==================================================*
+  Navigation styles
+ *==================================================*/
+
+// Button to toggle nav
+.toggle-nav {
+  width: calc(100% - 20px);
+  min-height: 39px;
+  position: relative;
+  font-size: 1.125rem;
+  text-align: left;
+  padding: 6px 50px 6px 10px;
+  margin: 15px $page-side-padding;
+  
+  .icon {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 10px;
+  }
+}
+
+// Toggled container
+.nav-wrapper {
+  display: none;
+  position: relative;
+  border-top: 1px solid $detailing-line-color;
+
+  &.open {
+    display: block;
+  }
+
+  // Up arrow from subnav
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: calc(50% - 10px);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  
+  // Rear triangle
+  &:before {
+    top: -11px;
+    border-bottom: 10px solid $detailing-line-color;
+  }
+  
+  // Front triangle
+  &:after {
+    top: -10px;
+    border-bottom: 10px solid #fff;
+  }
+}
+
+
+/*==================================================*
+  Primary navigation (header)
+ *==================================================*/
+
+.primary-nav {
+  @extend %nav;
+  border-bottom: 1px solid $detailing-line-color;
+  background-color: $page-bg-color;
+
+  .toggle-nav {
+    background-color: #007fab;
+    color: #fff;
+  }
+
+  a {
+    background-color: $primary-link-bg-color--mob;
+    color: $primary-link-text-color--mob;
+
+    &.active {
+      background-color: $primary-link-hover-bg-color--mob;
+      color: $primary-link-hover-text-color--mob;
+    }
+  }
+}
+
+
+/*==================================================*
+  Secondary navigation (sidebar)
+ *==================================================*/
+
+.secondary-nav {
+  @extend %nav;
+  margin-bottom: 10px;
+
+  h2 {
+    display: none;
+  }
+
+  .toggle-nav {
+    margin-top: 5px;
+  }
+
+  a {
+    background-color: $secondary-link-bg-color;
+    color: $secondary-link-text-color;
+
+    &.active {
+      background-color: $secondary-link-hover-bg-color;
+      color: $secondary-link-hover-text-color;
+    }
+  }
+}
+
+
+/*==================================================*
+  Media queries
+ *==================================================*/
+
+@media (min-width: 23.5rem) {
+  .primary-nav {
+    .toggle-nav {
+      width: auto;
+      min-width: 150px;
+    }
+
+    .nav-wrapper {
+      &:before, &:after {
+        left: 70px;
+      }
+    }
+  }
+}
+
+@include breakpoint(sm) {
+  .primary-nav, .secondary-nav {
+    .toggle-nav {
+      display: none;
+    }
+
+    .nav-wrapper {
+      display: block;
+      border-top: none;
+
+      &:before, &:after {
+        display: none;
+      }
+    }
+  }
+
+  .primary-nav {
+    @include clearfix;
+    padding: 5px $page-side-padding-sm;
+
+    ul {
+      display: table;
+      width: 100%;
+      padding: 0;
+
+      li {
+        margin-bottom: 0;
+      }
+
+      >li:first-child, >li:last-child, span {
+        display: table-cell;
+      }
+
+      >li:last-child {
+        text-align: right;
+      }
+
+      span li {
+        width: 25%;
+        display: inline-block;
+        text-align: center;
+        margin-right: -4px;
+      }
+    }
+
+    a {
+      display: inline-block;
+      background-color: $primary-link-bg-color;
+      color: $primary-link-text-color;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      padding: 7px 0;
+      
+      &.active {
+        background-color: $primary-link-bg-color;
+        color: $primary-link-text-color;
+      }
+
+      &:hover {
+        background-color: $primary-link-hover-bg-color;
+        color: $primary-link-hover-text-color;
+      }
+
+      &:focus {
+        outline-width: 5px;
+        background-color: inherit;
+      }
+    }
+  }
+
+  .secondary-nav {
+    padding-top: 15px;
+
+    h2 {
+      display: block;
+      border-top: 1px solid $detailing-line-color;
+      padding-top: 0.75em;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 1px;
+    }
+
+    a {
+      font-size: 0.875rem;
+      font-weight: bold;
+      padding: 6px 10px 5px;
+
+      &:hover {
+        background-color: $secondary-link-hover-bg-color;
+        color: $secondary-link-hover-text-color;
+      }
+    }
+  }
+}
+
+@include breakpoint(md) {
+  .primary-nav ul {
+    span, span li {
+      padding: 0 10px;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  .primary-nav a {
+    font-size: 1.125rem;
+    padding: 5px 0;
+  }
+}

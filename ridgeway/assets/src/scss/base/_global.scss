@@ -1,0 +1,64 @@
+/*==================================================*
+  Global variables
+ *==================================================*/
+
+/**
+ * Global variables are used by multiple Sass files
+ * 
+ * Variables used in one Sass file only are
+ * located at the top of the relevant Sass file
+ */
+
+// Page
+$page-width: 66.875rem; // 1070px
+$page-side-padding: 10px;
+$page-side-padding-sm: 20px;
+$page-bg-color: #fff;
+
+// Buttons
+$button-bg-color: #d9ecf3;
+$button-font-color: #0084a9;
+$button-hover-bg-color: #b2dae5;
+
+// Colours
+$detailing-line-color: #e7daad;
+
+
+/*==================================================*
+  Global styles
+ *==================================================*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background-color: #e7daad;
+}
+
+body {
+  background-color: #f6f6f6;
+  color: #616060;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#content {
+  font-size: 0.875rem;
+  line-height: 20 / 14;
+}
+
+.img-left {
+  max-width: 40%;
+  float: left;
+  margin: 0 20px 10px 0;
+
+  img {
+    max-width: 100%;
+  }
+}

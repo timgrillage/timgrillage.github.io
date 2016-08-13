@@ -1,0 +1,92 @@
+/*==================================================*
+  Search boxes between main content and footer
+ *==================================================*/
+
+.search-boxes {
+  font-size: 1rem;
+  padding: 0 $page-side-padding;
+
+  form {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    border-bottom: 3px solid $detailing-line-color;
+    background-color: #0084a9;
+    font-size: 1.25em;
+    color: #fff;
+    padding: 6px 10px;
+  }
+
+  .input-wrapper, input,
+  .select-wrapper, select, .customSelect {
+    width: 100%;
+  }
+
+  .box-content {
+    padding: 0 10px;
+  }
+}
+
+
+/*==================================================*
+  Media queries
+ *==================================================*/
+
+@include breakpoint(sm) {
+  .search-boxes {
+    @at-root .search-boxes-wrapper {
+      width: calc(100% + 20px);
+      margin-left: -20px;
+      overflow: hidden;
+    }
+
+    form {
+      width: 33.33%;
+      float: left;
+      padding-left: 20px;
+    }
+
+    // Hide placeholder text (because some of it gets hidden by narrower input fields)
+    ::-webkit-input-placeholder {
+      color: $input-bg-color;
+    }
+    :-moz-placeholder {
+      color: $input-bg-color;
+    }
+    ::-moz-placeholder {
+      color: $input-bg-color;
+    }
+    :-ms-input-placeholder {
+      color: $input-bg-color;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  .search-boxes {
+    @at-root .search-boxes-wrapper {
+      width: calc(100% + 30px);
+      margin-left: -30px;
+    }
+
+    form {
+      padding-left: 30px;
+    }
+
+    // Show placeholder text
+    ::-webkit-input-placeholder {
+      color: $placeholder-font-color;
+    }
+    :-moz-placeholder {
+      color: $placeholder-font-color;
+    }
+    ::-moz-placeholder {
+      color: $placeholder-font-color;
+    }
+    :-ms-input-placeholder {
+      color: $placeholder-font-color;
+    }
+  }
+}

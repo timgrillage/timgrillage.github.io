@@ -1,0 +1,167 @@
+/*==================================================*
+  Form variables
+ *==================================================*/
+
+$input-border-width: 1px;
+$input-border-color: #d0dcdc;
+$input-bg-color: #fff;
+$input-focus-border-width: 1px;
+$input-focus-border-color: #0084a9;
+$input-focus-bg-color: #fff;
+$placeholder-font-color: #a0a0a0;
+
+
+/*==================================================*
+  Form placeholders
+ *==================================================*/
+
+%input-button {
+  min-width: 24px;
+  min-height: 24px;
+  width: calc(1.5rem + 16px);
+  height: calc(1.5rem + 16px);
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  border: 2px solid $input-bg-color;
+}
+
+
+/*==================================================*
+  Form styles
+ *==================================================*/
+
+/**
+ * "input-wrapper" allows button to be placed inside the input field.
+ * The wrapper has no styling, the styling is applied to the input element
+ * to allow for focus styling. It uses inset box-shadow instead of border. 
+ * 
+ * "select-wrapper" allows styling of select box before javascript has
+ * loaded (which prevents visual change) or if javascript is disabled.
+ * It uses inset box-shadow instead of border, so that "custom-select" can
+ * be absolutely positioned over it and not have a double border.
+ *
+ * The select dropdown button is created with :before and :after on the
+ * "select-wrapper" and absolutely positioned over the select element,
+ * to hide the default unstyled dropdown button before javascript hides it.
+ *
+ * "customSelect" is absolutely positioned over "select-wrapper" when loaded.
+ * Focus styling is applied using the "customSelectFocus" class.
+ */
+
+input, select {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-appearance: none;
+}
+
+.input-wrapper, .select-wrapper {
+  position: relative;
+}
+
+.input-wrapper input, .select-wrapper, .customSelect {
+  min-height: calc(1.5rem + 18px);
+}
+
+.input-wrapper input, .select-wrapper, .customSelect {
+  box-shadow: 0 0 0 $input-border-width $input-border-color inset;
+  background-color: $input-bg-color;
+}
+
+.input-wrapper input, .customSelect {
+  padding: 9px 47px 9px 9px;
+}
+
+.input-wrapper input:focus, .customSelectFocus {
+  outline: none;
+  box-shadow: 0 0 0 $input-focus-border-width $input-focus-border-color inset;
+  background-color: $input-focus-bg-color;
+}
+
+.input-wrapper button {
+  @extend %input-button;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+  }
+}
+
+.select-wrapper {
+  padding: 9px;
+  overflow: hidden;
+
+  // Button
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  // Button background
+  &:before {
+    @extend %input-button;
+    background-color: $button-bg-color;
+  }
+  
+  // Button down arrow
+  &:after {
+    top: calc(1rem + 1px);
+    right: calc(1rem - 3px);
+    border-top: 10px solid $button-font-color;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+  }
+}
+
+select {
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.hasCustomSelect, .customSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.customSelectDisabledOption, option[disabled] {
+  color: $placeholder-font-color;
+}
+
+
+/*==================================================*
+  Media queries
+ *==================================================*/
+
+@include breakpoint(lg) {
+  .input-wrapper input, .select-wrapper, .customSelect {
+    min-height: calc(1.5rem + 22px);
+  }
+
+  .input-wrapper input, .customSelect {
+    padding: 11px 53px 11px 11px;
+  }
+
+  .input-wrapper button, .select-wrapper:before {
+    width: calc(1.5rem + 20px);
+    height: calc(1.5rem + 20px);
+  }
+
+  .select-wrapper {
+    padding: 11px;
+  }
+  
+  // Button down arrow
+  .select-wrapper:after {
+    top: calc(1rem + 3px);
+    right: calc(1rem - 1px);
+  }
+}

@@ -6,7 +6,10 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var livereload = require('gulp-livereload');
     
-// ==================================================
+
+/*==================================================*
+  Stylesheet
+ *==================================================*/
 
 gulp.task('style', function() {
     return gulp.src('./assets/src/scss/style.scss')
@@ -20,7 +23,10 @@ gulp.task('style', function() {
         .pipe(livereload());
 });
 
-// ==================================================
+
+/*==================================================*
+  Scripts
+ *==================================================*/
 
 gulp.task('scripts', function() {
     return gulp.src(['./assets/src/js/plugins/*.js', './assets/src/js/custom.js'])
@@ -30,7 +36,10 @@ gulp.task('scripts', function() {
         .pipe(livereload());
 });
 
-// ==================================================
+
+/*==================================================*
+  Images
+ *==================================================*/
 
 gulp.task('imagemin', function() {
     return gulp.src('./assets/src/img/*')
@@ -38,7 +47,10 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest('./assets/img'));
 });
 
-// ==================================================
+
+/*==================================================*
+  Watch
+ *==================================================*/
 
 gulp.task('watch', function() {
     livereload.listen();
@@ -46,6 +58,9 @@ gulp.task('watch', function() {
     gulp.watch('./assets/src/js/custom.js', ['scripts']);
 });
 
-// ==================================================
+
+/*==================================================*
+  Default
+ *==================================================*/
 
 gulp.task('default', ['style', 'scripts', 'watch']);

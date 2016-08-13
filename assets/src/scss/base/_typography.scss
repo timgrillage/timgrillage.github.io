@@ -10,7 +10,7 @@ h1, h2, h3 {
 
 h1 {
   position: relative;
-  font-size: rem(36px);
+  font-size: 2.25rem;
   line-height: 1.4;
   letter-spacing: -2px;
   padding-bottom: 0.625em;
@@ -119,50 +119,50 @@ ul {
 
 @include breakpoint(xs) {
   h1 {
-    font-size: rem(40px);
+    font-size: 2.5rem;
   }
 }
 
 @include breakpoint(sm) {
   h1 {
-    font-size: rem(42px);
+    font-size: 2.625rem;
   }
 
   h2 {
-    font-size: rem(34px);
+    font-size: 2.125rem;
   }
 
   .bubble {
-    font-size: rem(18px);
-    margin-bottom: em(20px);
+    font-size: 1.125rem;
+    margin-bottom: 1.125rem;
   }
 }
 
 @include breakpoint(md) {
   h1 {
-    font-size: rem(48px);
+    font-size: 3rem;
   }
 
   h2 {
-    font-size: rem(36px);
+    font-size: 2.25rem;
   }
 }
 
 @include breakpoint(lg) {
   h1 {
-    font-size: rem(64px);
+    font-size: 4rem;
     padding-bottom: 0.5em;
   }
 
   h2 {
-    font-size: rem(40px);
+    font-size: 2.5rem;
   }
 
   h3 {
-    font-size: rem(18px);
+    font-size: 1.125rem;
   }
 
   .bubble {
-    font-size: rem(20px);
+    font-size: 1.25rem;
   }
 }

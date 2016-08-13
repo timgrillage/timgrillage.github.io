@@ -1,19 +1,29 @@
 /*==================================================*
-  Convert PX to REM
+  Remove "px" if added to value
  *==================================================*/
 
-//Usage - font-size: rem(14px) or font-size: rem(14)
+@function strip-px($px-value) {
+  @return $px-value / ($px-value * 0 + 1);
+}
+
+
+/*==================================================*
+  Convert PX to REM  |  Usage - font-size: rem(14px)
+ *==================================================*/
 
 @function convert-to-rem($px-value) {
-  $value: ($px-value / ($px-value * 0 + 1)) / 16 * 1rem;
-  @if ($value == 0rem) { $value: 0; }
+  $value: strip-px($px-value) / 16 * 1rem;
+  @if ($value == 0rem) {
+    $value: 0;
+  }
   @return $value;
 }
 
 @function rem($px-values) {
   $max: length($px-values);
-
-  @if $max == 1 { @return convert-to-rem(nth($px-values, 1)); }
+  @if $max == 1 {
+    @return convert-to-rem(nth($px-values, 1));
+  }
 
   $remValues: ();
   @for $i from 1 through $max {
@@ -24,27 +34,20 @@
 
 
 /*==================================================*
-  Convert PX to EM
+  Convert PX to EM  |  Usage - font-size: em(14px)
  *==================================================*/
-
-//Usage - font-size: em(14px) or font-size: em(14)
-
-@function convert-to-em($px-value) {
-  $value: ($px-value / ($px-value * 0 + 1)) * 1em;
-  @if ($value == 0em) { $value: 0; }
-  @return $value;
-}
 
 @function em($px-values) {
   $remValues: rem($px-values);
-
   $max: length($remValues);
 
-  @if $max == 1 { @return convert-to-em(nth($remValues, 1)); }
+  @if $max == 1 {
+    @return strip-px(nth($remValues, 1)) * 1em;
+  }
 
   $emValues: ();
   @for $i from 1 through $max {
-    $emValues: append($emValues, convert-to-em(nth($remValues, $i)));
+    $emValues: append($emValues, strip-px(nth($remValues, $i)) * 1em);
   }
   @return $emValues;
 }

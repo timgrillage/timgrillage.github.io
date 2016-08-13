@@ -30,18 +30,18 @@
 
 @mixin breakpoint($point) {
   @if $point == xs {
-    @media (min-width: rem(360px)) { @content; }
+    @media (min-width: 22.5rem) { @content; } // 360px
   }
 
   @if $point == sm {
-    @media (min-width: rem(640px)) { @content; }
+    @media (min-width: 40rem) { @content; } // 640px
   }
 
   @if $point == md {
-    @media (min-width: rem(768px)) { @content; }
+    @media (min-width: 48rem) { @content; } // 768px
   }
 
   @if $point == lg {
-    @media (min-width: rem(1024px)) { @content; }
+    @media (min-width: 64rem) { @content; } // 1024px
   }
 }

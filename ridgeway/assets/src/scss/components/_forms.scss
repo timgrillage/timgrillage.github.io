@@ -118,6 +118,10 @@ input, select {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
   }
+
+  &:hover:before {
+    background-color: $button-hover-bg-color;
+  }
 }
 
 select {

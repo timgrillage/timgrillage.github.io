@@ -1,18 +1,9 @@
 /*==================================================*
-  Remove "px" if added to value
- *==================================================*/
-
-@function strip-px($px-value) {
-  @return $px-value / ($px-value * 0 + 1);
-}
-
-
-/*==================================================*
   Convert PX to REM  |  Usage - font-size: rem(14px)
  *==================================================*/
 
 @function convert-to-rem($px-value) {
-  $value: strip-px($px-value) / 16 * 1rem;
+  $value: ($px-value / ($px-value * 0 + 1)) / 16 * 1rem;
   @if ($value == 0rem) {
     $value: 0;
   }
@@ -30,24 +21,4 @@
     $remValues: append($remValues, convert-to-rem(nth($px-values, $i)));
   }
   @return $remValues;
-}
-
-
-/*==================================================*
-  Convert PX to EM  |  Usage - font-size: em(14px)
- *==================================================*/
-
-@function em($px-values) {
-  $remValues: rem($px-values);
-  $max: length($remValues);
-
-  @if $max == 1 {
-    @return strip-px(nth($remValues, 1)) * 1em;
-  }
-
-  $emValues: ();
-  @for $i from 1 through $max {
-    $emValues: append($emValues, strip-px(nth($remValues, $i)) * 1em);
-  }
-  @return $emValues;
 }

@@ -2,7 +2,7 @@
     'use strict';
 
     // Add 'js' class to body if JavaScript enabled
-    $(document.body).addClass('js');
+    $('html').addClass('js');
 
 
     // Add FastClick plugin for touch screen devices
@@ -33,7 +33,7 @@
     (function() {
         var $menu   = $('#main-menu');
         var $header = $('#page-header');
-        var mqw     = window.matchMedia('(min-width: 48rem)'); // 768px
+        //var mqw     = window.matchMedia('(min-width: 48rem)'); // 768px
 
         // Events
         $('#menu-icon').on('click', toggleMenu);
@@ -41,14 +41,14 @@
         $(window).load(getSection);
 
         // If tablet/desktop
-        if (mqw.matches) {
-            $(window).on('scroll', function() {
-                // Only do this if the page is not auto scrolling from a menu click
-                if ( !$(document.body).hasClass('scrolling') ) {
-                    getSection();
-                }
-            });
-        }
+        //if (mqw.matches) {
+        $(window).on('scroll', function() {
+            // Only do this if the page is not auto scrolling from a menu click
+            if ( !$(document.body).hasClass('scrolling') ) {
+                getSection();
+            }
+        });
+        //}
         
         // Toggle mobile menu
         function toggleMenu() {
@@ -67,7 +67,7 @@
         // Menu item click action
         function clicked() {
             // Mobile
-            if (!mqw.matches) {
+            if ( $menu.hasClass('open') ) {
                 // Close menu
                 $('#menu-icon, #main-menu').removeClass('open');
                 $menu.css('display', '');
@@ -95,7 +95,7 @@
             var targetOffset = Math.round($( $.attr(this, 'href') ).offset().top);
             var headerHeight = $header.outerHeight();
             
-            $('html, body').addClass('scrolling').animate({
+            $('html, body').animate({
                 scrollTop: targetOffset - headerHeight
             }, 600, function() {
                 $(document.body).removeClass('scrolling');
@@ -118,8 +118,8 @@
                     var linkWidth = link.outerWidth() + 'px';
                     var linkPos   = (link.offset().left - $menu.offset().left) + 'px';
 
-                    // Append <hr> to tablet/desktop menu on page load
-                    if (mqw.matches && !$menu.find('hr').length ) {
+                    // Append <hr> to menu on page load
+                    if (!$menu.find('hr').length ) {
                         var hr = $('<hr>').css({
                             width: linkWidth,
                             left: linkPos
@@ -155,8 +155,9 @@
     (function() {
         // Set distance into viewport before animated elements are revealed
         var $window   = $(window);
-        var mqo       = window.matchMedia('(orientation: landscape)');
-        var distance  = mqo.matches ? 0.85 : 0.9; // 15% for landscape / 10% for portrait
+        var distance  = $window.width() > $window.height() ? 0.85 : 0.9; // 15% for landscape / 10% for portrait
+        // var mqo       = window.matchMedia('(orientation: landscape)');
+        // var distance  = mqo.matches ? 0.85 : 0.9; // 15% for landscape / 10% for portrait
         var winHeight = $window.height() * distance;
 
         // Assign animated elements to an array

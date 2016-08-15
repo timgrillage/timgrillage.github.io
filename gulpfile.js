@@ -12,14 +12,14 @@ var livereload = require('gulp-livereload');
  *==================================================*/
 
 gulp.task('style', function() {
-    return gulp.src('./assets/src/scss/style.scss')
+    return gulp.src('./assets/src/scss/main.scss')
         .pipe(sass({
             outputStyle: 'compressed'
         }))
         .pipe(prefix({
             browsers: ['last 2 versions']
         }))
-        .pipe(gulp.dest('./assets'))
+        .pipe(gulp.dest('./assets/css'))
         .pipe(livereload());
 });
 
@@ -30,9 +30,9 @@ gulp.task('style', function() {
 
 gulp.task('scripts', function() {
     return gulp.src(['./assets/src/js/plugins/*.js', './assets/src/js/custom.js'])
-        .pipe(concat('scripts.js'))
+        .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./assets'))
+        .pipe(gulp.dest('./assets/js'))
         .pipe(livereload());
 });
 

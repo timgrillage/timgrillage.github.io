@@ -287,33 +287,38 @@
         padding-bottom: 100%;
       }
     }
+    
+    // Fix for IE9
+    #ie9 .layers div {
+      right: 0;
+    }
 
     .website {
-      background-image: url('img/website.png');
+      background-image: url('../img/website.png');
       top: 20px;
     }
 
     .code {
-      background-image: url('img/code.png');
+      background-image: url('../img/code.png');
       top: 120px;
     }
 
     .wireframe {
-      background-image: url('img/wireframe.png');
+      background-image: url('../img/wireframe.png');
       top: 220px;
     }
 
     // @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
     //   .website {
-    //     background-image: url('img/website-2x.png');
+    //     background-image: url('../img/website-2x.png');
     //   }
 
     //   .code {
-    //     background-image: url('img/code-2x.png');
+    //     background-image: url('../img/code-2x.png');
     //   }
 
     //   .wireframe {
-    //     background-image: url('img/wireframe-2x.png');
+    //     background-image: url('../img/wireframe-2x.png');
     //   }
     // }
     

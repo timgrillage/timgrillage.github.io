@@ -21,7 +21,7 @@
     <div class="nav-wrapper">
       <ul>
         <li><a href="#">About Us</a></li>
-        <span><!-- <span> added to improve link spacing (see notes) -->
+        <span><!-- <span> added to improve link spacing -->
           <li><a href="#">Contacts</a></li>
           <li><a href="#" class="active">Loss Prevention</a></li>
           <li><a href="#">Publications</a></li>
@@ -45,17 +45,14 @@
         <!-- Extra "content-inner" div required for padding when content and sidebar order swapped using css table groups -->
         <div class="content-inner">
           <h1>DNVPS Bunker Alerts</h1>
-
           <p class="intro">DNV Petroleum Services (DNVPS) specialises in marine fuel management and is the market leader for contracted fuel quality testing services. DNVPS maintains fuel testing laboratories in Singapore, Rotterdam, Oslo, Houston and Fujairah and is also a major provider of bunker quantity surveys. Additionally, DNVPS offers Total Fuel Management advisory services catering to the needs of both shore management and ships.</p>
-          <figure class="img-left">
-            <picture>
-              <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source srcset="assets/img/dnv.png, assets/img/dnv@2x.png 2x" media="(max-width: 47.9375rem)">
-              <source srcset="assets/img/dnv-lg.png, assets/img/dnv-lg@2x.png 2x">
-              <!--[if IE 9]></video><![endif]-->
-              <img srcset="assets/img/dnv-lg.png, assets/img/dnv-lg@2x.png 2x" alt="DNV logo">
-            </picture>
-          </figure>
+          <picture class="img-left">
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="assets/img/dnv.png, assets/img/dnv@2x.png 2x" media="(max-width: 47.9375rem)">
+            <source srcset="assets/img/dnv-lg.png, assets/img/dnv-lg@2x.png 2x">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="assets/img/dnv-lg.png, assets/img/dnv-lg@2x.png 2x" alt="DNV logo">
+          </picture>
           <p>DNVPS also publishes regular Bunker Alerts which are based entirely on the company’s analysis of fuel samples. Bunker Alerts are not intended to be an evaluation of overall bunker quality in the ports or areas concerned. However, they may aid the decision-making process when bunkers are required and may forewarn vessels about possible problems affecting bunkers already supplied.</p>
           <p>The circulation of Bunker Alerts is generally limited to DNVPS’ own clients. However, DNVPS has kindly allowed the West of England to make such information available to Members and other approved users of the Club’s website not less than 10 days after they have been issued on a strictly private and confidential basis. Therefore, in accordance with the statement printed at the bottom of each DNVPS Bunker Alert, the details should not be circulated to other parties or reproduced elsewhere.</p>
           <p>To view a DNVPS Bunker Alert, simply click on the title. Please note that you will only be able to access the Alert if you are a registered user of the Club's extranet - WestNet. You will be asked to login to WestNet (if you have not already done so) and then you will go directly to the Alert. (Depending on your web browser and security settings, you may need to give it permission to download the PDF file).</p>
@@ -84,7 +81,6 @@
     </div>
   </main>
   <section class="search-boxes" role="search">
-    <!-- Extra "wrapper" div required to remove left margin from first box but retain equal widths for all boxes -->
     <div class="search-boxes-wrapper">
       <form>
         <h3>Vessel Search</h3>

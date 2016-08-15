@@ -251,15 +251,6 @@
     width: 60%;
     padding: 1.75rem 1rem 2rem $padding-sm;
   }
-
-  @keyframes layers {
-    0% {
-        right: -100%;
-    }
-    100% {
-        right: 0;
-    }
-  }
   
   // Website / code / wireframe slide-in images
   .layers {
@@ -277,7 +268,7 @@
       right: -100%;
       background: right top no-repeat;
       background-size: contain;
-      -webkit-transform: translate3d(0, 0, 0); // Fix Safari rendeing issue during animation
+      -webkit-transform: translate3d(0, 0, 0); // Fix Safari rendering issue during animation
 
       // Force div height to be 100% of width
       &:before {

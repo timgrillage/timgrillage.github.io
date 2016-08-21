@@ -105,7 +105,7 @@ section {
 // Media queries
 // ==================================================
 
-@include breakpoint(xs) {
+@include mq(xs) {
   .logo,
   .page-footer {
     padding: 1rem $padding-xs;
@@ -116,7 +116,7 @@ section {
   }
 }
 
-@include breakpoint(sm) {
+@include mq(sm) {
   .logo,
   .page-footer {
     padding: 1.25rem $padding-sm;
@@ -141,7 +141,7 @@ section {
   }
 }
 
-@include breakpoint(md) {
+@include mq(md) {
   .page-header,
   .page-footer {
     padding: 1.5rem $padding-md;
@@ -158,7 +158,7 @@ section {
   }
 }
 
-@include breakpoint(lg) {
+@include mq(lg) {
   .page-header {
     left: calc( (100vw - 64rem) / 2 );
     right: calc( (100vw - 64rem) / 2 );

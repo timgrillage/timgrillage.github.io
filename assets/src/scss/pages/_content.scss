@@ -234,7 +234,7 @@
 // Media queries
 // ==================================================
 
-@include breakpoint(xs) {
+@include mq(xs) {
   .intro {
     padding: 1.75rem $padding-xs 2rem;
   }
@@ -246,7 +246,7 @@
   }
 }
 
-@include breakpoint(sm) {
+@include mq(sm) {
   .intro {
     width: 60%;
     padding: 1.75rem 1rem 2rem $padding-sm;
@@ -349,7 +349,7 @@
   }
 }
 
-@include breakpoint(md) {
+@include mq(md) {
   .intro {
     padding: 1.75rem 0 2rem $padding-md;
 
@@ -434,7 +434,7 @@
   }
 }
 
-@include breakpoint(lg) {
+@include mq(lg) {
   .intro {
     padding: 2.5rem 1rem 3rem $padding-lg;
 

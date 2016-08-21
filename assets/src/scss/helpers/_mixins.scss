@@ -1,15 +1,22 @@
 // ==================================================
-// Clearfix
+// Responsive breakpoints
 // ==================================================
 
-@mixin clearfix() {
-  &:before, &:after {
-    content: '';
-    display: table;
-  }
+$breakpoints: (
+  'xs': (min-width: 22.5rem), // 360px
+  'sm': (min-width: 40rem),   // 640px
+  'md': (min-width: 48rem),   // 768px
+  'lg': (min-width: 64rem)    // 1024px
+);
 
-  &:after {
-    clear: both;
+@mixin mq($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media #{inspect(map-get($breakpoints, $size))} {
+      @content;
+    }
+  }
+  @else {
+    @warn 'There is no breakpoint named "#{$size}".';
   }
 }
 
@@ -25,23 +32,16 @@
 
 
 // ==================================================
-// Responsive breakpoints
+// Clearfix
 // ==================================================
 
-@mixin breakpoint($point) {
-  @if $point == xs {
-    @media (min-width: 22.5rem) { @content; } // 360px
+@mixin clearfix() {
+  &:before, &:after {
+    content: '';
+    display: table;
   }
 
-  @if $point == sm {
-    @media (min-width: 40rem) { @content; } // 640px
-  }
-
-  @if $point == md {
-    @media (min-width: 48rem) { @content; } // 768px
-  }
-
-  @if $point == lg {
-    @media (min-width: 64rem) { @content; } // 1024px
+  &:after {
+    clear: both;
   }
 }

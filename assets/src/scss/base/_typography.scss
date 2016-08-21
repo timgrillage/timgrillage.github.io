@@ -4,8 +4,8 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.9375rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   color: $text-mid;
 }
 
@@ -118,13 +118,17 @@ a {
 // Media queries
 // ==================================================
 
-@include breakpoint(xs) {
+@include mq(xs) {
+  body {
+    line-height: 1.625;
+  }
+
   h1 {
     font-size: 2.5rem;
   }
 }
 
-@include breakpoint(sm) {
+@include mq(sm) {
   h1 {
     font-size: 2.625rem;
   }
@@ -139,7 +143,7 @@ a {
   }
 }
 
-@include breakpoint(md) {
+@include mq(md) {
   h1 {
     font-size: 3rem;
   }
@@ -149,12 +153,7 @@ a {
   }
 }
 
-@include breakpoint(lg) {
-  body {
-    font-size: 1rem;
-    line-height: 1.625;
-  }
-  
+@include mq(lg) {  
   h1 {
     font-size: 4rem;
     padding-bottom: 0.5em;

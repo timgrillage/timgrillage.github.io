@@ -98,19 +98,19 @@
 // Media queries
 // ==================================================
 
-@include breakpoint(xs) {
+@include mq(xs) {
   #menu-icon {
     border-width: 1rem $padding-xs;
   }
 }
 
-@include breakpoint(sm) {
+@include mq(sm) {
   #menu-icon {
     border-width: 1.25rem $padding-sm;
   }
 }
 
-@include breakpoint(md) {
+@include mq(md) {
   #menu-icon {
     display: none;
   }

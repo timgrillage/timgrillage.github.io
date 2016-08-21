@@ -10,11 +10,11 @@
 
 
     // Prevent sticky hover on touch screen devices
-    // $('.logo, .project__heading span').on('touchend touchcancel', function() {
-    //     $(this).addClass('no-hover');
-    // }).on('touchstart mouseover', function() {
-    //     $(this).removeClass('no-hover');        
-    // });
+    $('.logo, .project__heading span').on('touchend touchcancel', function() {
+        $(this).addClass('no-hover');
+    }).on('touchstart mouseover', function() {
+        $(this).removeClass('no-hover');        
+    });
 
 
     // Add class to 'layers' div when images have loaded

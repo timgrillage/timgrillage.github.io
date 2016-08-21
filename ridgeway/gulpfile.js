@@ -1,17 +1,17 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var prefix = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+var gulp       = require('gulp');
+var prefix     = require('gulp-autoprefixer');
+var concat     = require('gulp-concat');
 var livereload = require('gulp-livereload');
+var sass       = require('gulp-sass');
+var uglify     = require('gulp-uglify');
 
 
-/*==================================================*
-  Stylesheet
- *==================================================*/
+/*============================================================*
+  Styles
+ *============================================================*/
 
-gulp.task('style', function() {
-    return gulp.src('./assets/src/scss/style.scss')
+gulp.task('styles', function() {
+    return gulp.src('./assets/src/scss/main.scss')
         .pipe(sass({
             outputStyle: 'compressed'
         }))
@@ -23,32 +23,32 @@ gulp.task('style', function() {
 });
 
 
-/*==================================================*
+/*============================================================*
   Scripts
- *==================================================*/
+ *============================================================*/
 
 gulp.task('scripts', function() {
     return gulp.src(['./assets/src/js/plugins/*.js', './assets/src/js/custom.js'])
-        .pipe(concat('scripts.js'))
+        .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./assets/js'))
         .pipe(livereload());
 });
 
 
-/*==================================================*
+/*============================================================*
   Watch
- *==================================================*/
+ *============================================================*/
 
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch('./assets/src/scss/**/*.scss', ['style']);
+    gulp.watch('./assets/src/scss/**/*.scss', ['styles']);
     gulp.watch('./assets/src/js/custom.js', ['scripts']);
 });
 
 
-/*==================================================*
+/*============================================================*
   Default
- *==================================================*/
+ *============================================================*/
 
-gulp.task('default', ['style', 'scripts', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'watch']);

@@ -1,36 +1,11 @@
+/*============================================================*
+  Footer styles
+ *============================================================*/
+
 .site-footer {
   border-top: 3px solid $detailing-line-color;
   background-color: #01526a;
   color: #fff;
-  padding: 10px $page-side-padding 30px;
-
-  .site-footer-content {
-    position: relative;
-    border-left: 1px solid $detailing-line-color;
-    padding: 50px 0 0;
-    
-    // Crossbars
-    &:before, &:after {
-      content: '';
-      display: block;
-      height: 1px;
-      position: absolute;
-      left: -11px;
-      background-color: $detailing-line-color;
-    }
-    
-    // Short crossbar
-    &:before {
-      width: 11px;
-      top: 0;
-    }
-    
-    // Long crossbar
-    &:after {
-      width: 31px;
-      top: 20px;
-    }
-  }
   
   a {
     color: #d9ecf3;
@@ -45,8 +20,36 @@
   }
 }
 
+.site-footer__content {
+  position: relative;
+  border-left: 1px solid $detailing-line-color;
+  padding: 50px 0 0;
+  
+  // Crossbars
+  &:before, &:after {
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    left: -11px;
+    background-color: $detailing-line-color;
+  }
+  
+  // Short crossbar
+  &:before {
+    width: 11px;
+    top: 0;
+  }
+  
+  // Long crossbar
+  &:after {
+    width: 31px;
+    top: 20px;
+  }
+}
+
 // Copyright and legal links
-.site-info {
+.site-footer__legal {
   border: solid $detailing-line-color;
   border-width: 1px 0;
   font-size: 0.875rem;
@@ -58,33 +61,24 @@
 }
 
 
-/*==================================================*
+/*============================================================*
   Media queries
- *==================================================*/
+ *============================================================*/
 
-@media (min-width: $page-width) {
-  .site-footer {
-    padding-left: calc((100vw - #{$page-width}) / 2 + #{$page-side-padding});
-    padding-right: calc((100vw - #{$page-width}) / 2 + #{$page-side-padding});
-  }
-}
-
-@include breakpoint(lg) {
+@include mq(lg) {
   .site-footer {
     padding-top: 30px;
     padding-bottom: 40px; 
   }
 
-  .site-info {
-    li {
-      display: inline-block;
-      line-height: 1.285;
-      padding: 0 4px 0 0;
+  .site-footer__legal li {
+    display: inline-block;
+    line-height: 1.285;
+    padding: 0 4px 0 0;
 
-      &:not(:first-child) {
-        border-left: 1px solid #fff;
-        padding-left: 8px;
-      }
+    &:not(:first-child) {
+      border-left: 1px solid #fff;
+      padding-left: 8px;
     }
   }
 }

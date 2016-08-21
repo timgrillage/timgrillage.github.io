@@ -1,19 +1,21 @@
-/*==================================================*
+/*============================================================*
   Form variables
- *==================================================*/
+ *============================================================*/
 
 $input-border-width: 1px;
 $input-border-color: #d0dcdc;
 $input-bg-color: #fff;
+
 $input-focus-border-width: 1px;
 $input-focus-border-color: #0084a9;
 $input-focus-bg-color: #fff;
+
 $placeholder-font-color: #a0a0a0;
 
 
-/*==================================================*
+/*============================================================*
   Form placeholders
- *==================================================*/
+ *============================================================*/
 
 %input-button {
   min-width: 24px;
@@ -27,9 +29,9 @@ $placeholder-font-color: #a0a0a0;
 }
 
 
-/*==================================================*
+/*============================================================*
   Form styles
- *==================================================*/
+ *============================================================*/
 
 /**
  * "input-wrapper" allows button to be placed inside the input field.
@@ -42,14 +44,18 @@ $placeholder-font-color: #a0a0a0;
  * be absolutely positioned over it and not have a double border.
  *
  * The select dropdown button is created with :before and :after on the
- * "select-wrapper" and absolutely positioned over the select element,
- * to hide the default unstyled dropdown button before javascript hides it.
+ * "select-wrapper".
  *
  * "customSelect" is absolutely positioned over "select-wrapper" when loaded.
  * Focus styling is applied using the "customSelectFocus" class.
  */
 
-input, select {
+.input-wrapper, .select-wrapper {
+  position: relative;
+}
+
+.input-wrapper input, .select-wrapper select {
+  width: 100%;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -58,15 +64,8 @@ input, select {
   -webkit-appearance: none;
 }
 
-.input-wrapper, .select-wrapper {
-  position: relative;
-}
-
 .input-wrapper input, .select-wrapper, .customSelect {
   min-height: calc(1.5rem + 18px);
-}
-
-.input-wrapper input, .select-wrapper, .customSelect {
   box-shadow: 0 0 0 $input-border-width $input-border-color inset;
   background-color: $input-bg-color;
 }
@@ -141,11 +140,11 @@ select {
 }
 
 
-/*==================================================*
+/*============================================================*
   Media queries
- *==================================================*/
+ *============================================================*/
 
-@include breakpoint(lg) {
+@include mq(lg) {
   .input-wrapper input, .select-wrapper, .customSelect {
     min-height: calc(1.5rem + 22px);
   }

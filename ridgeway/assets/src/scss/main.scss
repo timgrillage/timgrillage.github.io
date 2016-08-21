@@ -1,20 +1,21 @@
 @import
+  'helpers/variables',
   'helpers/mixins';
 
 @import
   'base/normalize',
-  'base/global',
+  'base/base',
   'base/typography',
   'base/icons';
 
 @import
   'components/nav',
-  'components/breadcrumbs',
+  'components/breadcrumb',
   'components/forms',
   'components/buttons';
         
 @import
-  'layout/layout',
+  'layout/structure',
   'layout/header',
-  'layout/search-boxes',
+  'layout/search',
   'layout/footer';

@@ -1,0 +1,31 @@
+/*============================================================*
+  Global variables
+ *============================================================*/
+
+/**
+ * Global variables are used by multiple Sass files
+ * 
+ * Variables used in one Sass file only are
+ * located at the top of the relevant Sass file
+ */
+
+// Breakpoints
+$breakpoints: (
+  'sm': (min-width: 40rem), // 640px
+  'md': (min-width: 48rem), // 768px
+  'lg': (min-width: 64rem)  // 1024px
+);
+
+// Page
+$page-width: 66.875rem; // 1070px
+$page-side-padding: 10px;
+$page-side-padding-sm: 20px;
+$page-bg-color: #fff;
+
+// Buttons
+$button-bg-color: #d9ecf3;
+$button-font-color: #0084a9;
+$button-hover-bg-color: #b2dae5;
+
+// Colours
+$detailing-line-color: #e7daad;

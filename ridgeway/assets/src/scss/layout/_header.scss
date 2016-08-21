@@ -1,9 +1,13 @@
+/*============================================================*
+  Header styles
+ *============================================================*/
+
 .site-header {
-  @include clearfix;
   border-bottom: 3px solid $detailing-line-color;
   background-color: #007fab;
   color: #fff;
   padding: 0 $page-side-padding;
+  overflow: hidden;
 
   a {
     color: #d9ecf3;
@@ -31,11 +35,11 @@
 }
 
 
-/*==================================================*
+/*============================================================*
   Media queries
- *==================================================*/
+ *============================================================*/
  
-@include breakpoint(sm) {
+@include mq(sm) {
   .site-header {
     padding: 0 $page-side-padding-sm;
   }

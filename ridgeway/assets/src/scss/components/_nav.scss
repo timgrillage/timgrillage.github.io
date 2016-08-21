@@ -1,6 +1,6 @@
-/*==================================================*
+/*============================================================*
   Navigation variables
- *==================================================*/
+ *============================================================*/
 
 // Primary nav links on small screens (when menu is vertical)
 $primary-link-bg-color--mob: #d9ecf3;
@@ -26,9 +26,9 @@ $secondary-link-hover-bg-color: #339dba;
 $secondary-link-hover-text-color: #fff;
 
 
-/*==================================================*
-  Navigation placeholder
- *==================================================*/
+/*============================================================*
+  Navigation placeholders
+ *============================================================*/
 
 %nav {
   ul {
@@ -52,9 +52,9 @@ $secondary-link-hover-text-color: #fff;
 }
 
 
-/*==================================================*
+/*============================================================*
   Navigation styles
- *==================================================*/
+ *============================================================*/
 
 // Button to toggle nav
 .toggle-nav {
@@ -106,9 +106,9 @@ $secondary-link-hover-text-color: #fff;
 }
 
 
-/*==================================================*
+/*============================================================*
   Primary navigation (header)
- *==================================================*/
+ *============================================================*/
 
 .primary-nav {
   @extend %nav;
@@ -132,9 +132,9 @@ $secondary-link-hover-text-color: #fff;
 }
 
 
-/*==================================================*
+/*============================================================*
   Secondary navigation (sidebar)
- *==================================================*/
+ *============================================================*/
 
 .secondary-nav {
   @extend %nav;
@@ -160,9 +160,9 @@ $secondary-link-hover-text-color: #fff;
 }
 
 
-/*==================================================*
+/*============================================================*
   Media queries
- *==================================================*/
+ *============================================================*/
 
 @media (min-width: 23.5rem) {
   .primary-nav {
@@ -179,7 +179,7 @@ $secondary-link-hover-text-color: #fff;
   }
 }
 
-@include breakpoint(sm) {
+@include mq(sm) {
   .primary-nav, .secondary-nav {
     .toggle-nav {
       display: none;
@@ -279,7 +279,7 @@ $secondary-link-hover-text-color: #fff;
   }
 }
 
-@include breakpoint(md) {
+@include mq(md) {
   .primary-nav ul {
     span, span li {
       padding: 0 10px;
@@ -287,7 +287,7 @@ $secondary-link-hover-text-color: #fff;
   }
 }
 
-@include breakpoint(lg) {
+@include mq(lg) {
   .primary-nav a {
     font-size: 1.125rem;
     padding: 5px 0;

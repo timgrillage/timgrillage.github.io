@@ -1,6 +1,22 @@
-/*==================================================*
+/*============================================================*
+  Responsive media queries
+ *============================================================*/
+
+@mixin mq($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media #{inspect(map-get($breakpoints, $size))} {
+      @content;
+    }
+  }
+  @else {
+    @warn 'There is no breakpoint named "#{$size}".';
+  }
+}
+
+
+/*============================================================*
   Clearfix
- *==================================================*/
+ *============================================================*/
 
 @mixin clearfix() {
   &:before, &:after {
@@ -14,20 +30,24 @@
 }
 
 
-/*==================================================*
-  Responsive breakpoints
- *==================================================*/
+/*============================================================*
+  Form field placeholders
+ *============================================================*/
 
-@mixin breakpoint($point) {
-  @if $point == sm {
-    @media (min-width: 40rem) { @content; }
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
   }
 
-  @if $point == md {
-    @media (min-width: 48rem) { @content; }
+  &:-moz-placeholder {
+    @content;
   }
 
-  @if $point == lg {
-    @media (min-width: 64rem) { @content; }
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
   }
 }

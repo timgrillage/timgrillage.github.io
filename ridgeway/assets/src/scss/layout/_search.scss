@@ -1,0 +1,75 @@
+/*============================================================*
+  Search boxes between main content and footer
+ *============================================================*/
+
+.search {
+  padding: 0 $page-side-padding;
+}
+
+.search-form {
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 30px;
+
+  h3 {
+    border-bottom: 3px solid $detailing-line-color;
+    background-color: #0084a9;
+    font-size: 1.25em;
+    color: #fff;
+    padding: 6px 10px;
+  }
+
+  &__content {
+    padding: 0 10px;
+  }
+
+  .input-wrapper,
+  .select-wrapper,
+  .customSelect {
+    width: 100%;
+  }
+}
+
+
+/*============================================================*
+  Media queries
+ *============================================================*/
+
+@include mq(sm) {
+  .search__inner {
+    width: calc(100% + 20px);
+    margin-left: -20px;
+    overflow: hidden;
+  }
+
+  .search-form {
+    width: 33.33%;
+    float: left;
+    padding-left: 20px;
+    
+    input {
+      // Hide placeholder text (because some of it gets hidden by narrower input fields)
+      @include placeholder {
+        color: $input-bg-color;
+      }
+    } 
+  }
+}
+
+@include mq(lg) {
+  .search__inner {
+    width: calc(100% + 30px);
+    margin-left: -30px;
+  }
+
+  .search-form {
+    padding-left: 30px;
+    
+    input {
+      // Show placeholder text
+      @include placeholder {
+        color: $placeholder-font-color;
+      }
+    }
+  }
+}

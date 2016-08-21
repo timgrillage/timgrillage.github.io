@@ -15,27 +15,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Tim Grillage - Front-End Web Developer from Oxfordshire</title>
-  <meta name="description" content="A front-end web developer from Oxfordshire who creates high performance, responsive websites that look and perform beautifully across multiple devices.">
+  <meta name="description" content="An experienced front-end web developer from Oxfordshire who creates high performance, responsive websites that look and perform beautifully across multiple devices.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css?v=1.1">
 </head>
 <body>
-  <header id="page-header">
-    <div class="inner-container">
-      <p id="logo"><a href="#home">#timGrillage</a></p>
-      <div id="menu-icon"><span></span></div>
-      <nav id="main-menu">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header class="page-header" role="banner">
+    <a href="#home" class="logo">#timGrillage</a>
+    <div id="menu-icon"><span></span></div>
+    <nav id="main-menu" aria-label="Navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
   <main>
     <section id="home">
@@ -53,7 +50,7 @@
         <div class="website"></div>
       </div>
     </section>
-    
+    <!-- ABOUT -->
     <section id="about">
       <header>
         <div class="bubble">Who I am</div>
@@ -71,7 +68,7 @@
         <p>I love great design and admire creativity. I like creating things that people admire. I like to travel, I love mountains, especially ones covered in snow. I like sport, particularly football and F1. I like extreme sports too, although these days shopping for socks is about the biggest adrenaline rush I get! I like good food and red wine. I don't like bad spelling and grammar.</p>
       </div>
     </section>
-    
+    <!-- SKILLS -->
     <section id="skills">
       <header>
         <div class="bubble">What I do</div>
@@ -107,7 +104,7 @@
         <p>I love creating e-commerce websites and develop Magento themes that are user-friendly with multiple product images for optimum performance and quality.</p>
       </div>
     </section>
-    
+    <!-- WORK -->
     <section id="work">
       <header>
         <div class="bubble">I did this</div>
@@ -121,10 +118,10 @@
           <!--[if IE 9]></video><![endif]-->
           <img src="assets/img/va-medium.jpg" alt="Vintage &amp; Artisan website screenshots">
         </picture>
-        <h3>Vintage &amp; Artisan
+        <h3 class="project__heading">Vintage &amp; Artisan
           <span tabindex="0"><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
         </h3>
-        <div class="details">
+        <div class="project__details">
           <p>An e-commerce website for a company selling vintage and artisan furniture and accessories, built with Magento 2.</p>
           <ul>
             <li>
@@ -144,10 +141,10 @@
           <!--[if IE 9]></video><![endif]-->
           <img src="assets/img/oo-medium.jpg" alt="ONA &amp; Oliver website on different devices">
         </picture>
-        <h3>ONA &amp; Oliver
+        <h3 class="project__heading">ONA &amp; Oliver
           <span tabindex="0"><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
         </h3>
-        <div class="details">
+        <div class="project__details">
           <p>An e-commerce website for a friend's business to sell handmade jewellery and accessories online, built with WordPress and the WooCommerce plugin.</p>
           <ul>
             <li>
@@ -167,10 +164,10 @@
           <!--[if IE 9]></video><![endif]-->
           <img src="assets/img/sd-medium.jpg" alt="JE Murals background image">
         </picture>
-        <h3>Scott Dunn
+        <h3 class="project__heading">Scott Dunn
           <span tabindex="0"><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
         </h3>
-        <div class="details">
+        <div class="project__details">
         <p>A recruitment website for the UK's leading luxury travel company, built with WordPress.</p>
           <ul>
             <li>
@@ -190,10 +187,10 @@
           <!--[if IE 9]></video><![endif]-->
           <img src="assets/img/je-medium.jpg" alt="JE Murals background image">
         </picture>
-        <h3>JE Murals
+        <h3 class="project__heading">JE Murals
           <span tabindex="0"><svg><use xlink:href="assets/img/icons.svg#icon-info"></use></svg></span>
         </h3>
-        <div class="details">
+        <div class="project__details">
           <p>A brochure website for a local children's mural artist, built with WordPress.</p>
           <ul>
             <li>
@@ -206,21 +203,21 @@
         </div>
       </div>
     </section>
-    
+    <!-- CONTACT -->
     <section id="contact">
       <header>
         <div class="bubble">Say hello</div>
         <h2>Contact</h2>
       </header>
       <form>
-        <p><input type="text" name="name" placeholder="Name" required></p>
-        <p><input type="email" name="email" placeholder="Email" required></p>
-        <p><textarea name="message" cols="40" rows="8" placeholder="Message" required></textarea></p>
-        <button>Send</button>
+        <p><input type="text" name="name" placeholder="Name" aria-label="Name" required></p>
+        <p><input type="email" name="email" placeholder="Email" aria-label="Email" required></p>
+        <p><textarea name="message" cols="40" rows="8" placeholder="Message" aria-label="Message" required></textarea></p>
+        <button type="submit">Send</button>
       </form>
     </section>
   </main>
-  <footer id="page-footer">
+  <footer class="page-footer" role="contentinfo">
     <p class="github">
       <a href="https://github.com/timgrillage/timgrillage.github.io">
         <svg><use xlink:href="assets/img/icons.svg#icon-github"></use></svg>

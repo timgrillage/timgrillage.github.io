@@ -43,21 +43,10 @@ html{
 
 body {
   background-color: #c9c8c5;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: $text-mid;
-  //-webkit-font-smoothing: antialiased;
 }
 
-
-// ==================================================
-// Media queries
-// ==================================================
-
-@include breakpoint(lg) {
-  body {
-    font-size: 1rem;
-    line-height: 1.625;
-  }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

@@ -10,15 +10,15 @@
 
 
     // Prevent sticky hover on touch screen devices
-    $('#logo a, #work h3 span').on('touchend touchcancel', function() {
-        $(this).addClass('no-hover');
-    }).on('touchstart mouseover', function() {
-        $(this).removeClass('no-hover');        
-    });
+    // $('.logo, .project__heading span').on('touchend touchcancel', function() {
+    //     $(this).addClass('no-hover');
+    // }).on('touchstart mouseover', function() {
+    //     $(this).removeClass('no-hover');        
+    // });
 
 
     // Add class to 'layers' div when images have loaded
-    $('#home .layers').waitForImages({
+    $('.layers').waitForImages({
         finished: function() {
             $(this).addClass('ready');
         },
@@ -32,23 +32,21 @@
 
     (function() {
         var $menu   = $('#main-menu');
-        var $header = $('#page-header');
+        var $header = $('.page-header');
         //var mqw     = window.matchMedia('(min-width: 48rem)'); // 768px
 
         // Events
         $('#menu-icon').on('click', toggleMenu);
-        $('#main-menu, #logo').on('click', 'a', clicked);
+        $('#main-menu a, .logo').on('click', clicked);
         $(window).load(getSection);
 
         // If tablet/desktop
-        //if (mqw.matches) {
         $(window).on('scroll', function() {
             // Only do this if the page is not auto scrolling from a menu click
             if ( !$(document.body).hasClass('scrolling') ) {
                 getSection();
             }
         });
-        //}
         
         // Toggle mobile menu
         function toggleMenu() {
@@ -66,6 +64,9 @@
 
         // Menu item click action
         function clicked() {
+            // Prevent focus highlighting on click
+            $(this).blur();
+
             // Mobile
             if ( $menu.hasClass('open') ) {
                 // Close menu
@@ -76,7 +77,7 @@
             // Tablet/desktop
             else {
                 var link;
-                if ( $(this).parent().attr('id') == 'logo' ) { // Logo clicked
+                if ( $(this).hasClass('logo') ) { // Logo clicked
                     link = $menu.find('a[href="#home"]');
                 } else { // Menu item clicked
                     link = $(this);
@@ -156,8 +157,6 @@
         // Set distance into viewport before animated elements are revealed
         var $window   = $(window);
         var distance  = $window.width() > $window.height() ? 0.85 : 0.9; // 15% for landscape / 10% for portrait
-        // var mqo       = window.matchMedia('(orientation: landscape)');
-        // var distance  = mqo.matches ? 0.85 : 0.9; // 15% for landscape / 10% for portrait
         var winHeight = $window.height() * distance;
 
         // Assign animated elements to an array
@@ -198,10 +197,10 @@
     // Show / hide project details
     // ==================================================
 
-    $('#work h3 span').on('click keydown', toggleDetails);
+    $('.project__heading span').on('click keydown', toggleDetails);
 
     // Temporarily disable dead project links
-    $('#work .details').on('click', 'a[href="#"]', function() {
+    $('.project__details').on('click', 'a[href="#"]', function() {
         return false;
     });
 
@@ -209,7 +208,10 @@
         var $this    = $(this);
         var $svg     = $this.find('svg');
         var $use     = $svg.find('use');
-        var $details = $this.closest('.project').find('.details');
+        var $details = $this.closest('.project').find('.project__details');
+
+        // Prevent focus highlighting on click
+        $(this).blur();
         
         if (e.type == 'click' || e.which == 13) {
 

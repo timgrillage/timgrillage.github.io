@@ -109,6 +109,22 @@
   position: relative;
   margin: 0 auto;
 
+  &.va {
+    background-color: #d9dadb;
+  }
+
+  &.oo {
+    background-color: #d1eb83;
+  }
+
+  &.sd {
+    background-color: #a9ddee;
+  }
+
+  &.je {
+    background-color: #339c49;
+  }
+
   &.revealed {
     animation: zoomIn 0.5s;
   }
@@ -161,7 +177,7 @@
     }
   }
 
-  .details {
+  &__details {
     display: none;
     height: calc(100% - 3rem);
     position: absolute;
@@ -174,31 +190,31 @@
 
     li {
       margin-top: 0.625rem;
-      
-      svg {
-        width: 1.5rem;
-        height: 1.5rem;
-        vertical-align: top;
-        margin-right: 0.5rem;
-        fill: currentColor;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      vertical-align: top;
+      margin-right: 0.5rem;
+      fill: currentColor;
+    }
+
+    a {
+      display: inline-block;
+      line-height: 1.5rem;
+      color: #fff;
+      vertical-align: top;
+
+      &:hover {
+        color: $highlight;
       }
 
-      a {
-        display: inline-block;
-        line-height: 1.5rem;
-        color: #fff;
-        vertical-align: top;
-
-        &:hover {
-          color: $highlight;
-        }
-
-        &:hover svg {
-          fill: $highlight;
-        }
+      &:hover svg {
+        fill: $highlight;
       }
     }
-  
+
     // Hide details until panel slide complete
     p, ul {
       display: none;
@@ -210,22 +226,6 @@
         display: block;
       }
     }
-  }
-
-  &.va {
-    background-color: #d9dadb;
-  }
-
-  &.oo {
-    background-color: #d1eb83;
-  }
-
-  &.sd {
-    background-color: #a9ddee;
-  }
-
-  &.je {
-    background-color: #339c49;
   }
 }
 
@@ -488,7 +488,7 @@
       padding: 0 1.5rem 0.125rem;
     }
 
-    .details {
+    &__details {
       padding: 1rem 1.5rem;
     }
   }

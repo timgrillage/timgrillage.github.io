@@ -1,33 +1,32 @@
-#page-header {
+.page-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  border-bottom: 1px solid $bg-light;
+  background-color: rgba(#fff, 0.975);
+  overflow: hidden;
   z-index: 2;
 
-  .inner-container {
-    @include clearfix;
-    border-bottom: 1px solid $bg-light;
-    background-color: rgba(#fff, 0.95);
-  }
+  // .page-header__inner {
+  //   border-bottom: 1px solid $bg-light;
+  //   background-color: rgba(#fff, 0.975);
+  //   overflow: hidden;
+  // }
 }
 
-#logo {
+.logo {
   @include headingFont;
+  display: block;
   width: 75%;
   float: left;
   font-size: 1.25rem;
   line-height: 1;
-  padding: 0;
+  color: #000;
+  padding: 1rem $padding-xxs;
 
-  a {
-    display: inline-block;
-    color: #000;
-    padding: 1rem $padding-xxs;
-
-    &:not(.no-hover):hover, &:not(.no-hover):focus {
-      color: $highlight;
-    }
+  &:not(.no-hover):hover, &:not(.no-hover):focus {
+    color: $highlight;
   }
 }
 
@@ -50,7 +49,7 @@ section {
   }
 }
 
-#page-footer {
+.page-footer {
   background-color: #333;
   font-size: 0.875rem;
   padding: 1rem $padding-xxs;
@@ -107,8 +106,8 @@ section {
 // ==================================================
 
 @include breakpoint(xs) {
-  #logo a,
-  #page-footer {
+  .logo,
+  .page-footer {
     padding: 1rem $padding-xs;
   }
 
@@ -118,12 +117,12 @@ section {
 }
 
 @include breakpoint(sm) {
-  #logo a,
-  #page-footer {
+  .logo,
+  .page-footer {
     padding: 1.25rem $padding-sm;
   }
 
-  #page-footer {
+  .page-footer {
     p.copyright {
       width: 50%;
     }
@@ -143,18 +142,15 @@ section {
 }
 
 @include breakpoint(md) {
-  #page-header .inner-container,
-  #page-footer {
+  .page-header,
+  .page-footer {
     padding: 1.5rem $padding-md;
   }
 
-  #logo a {
-    padding: 0;
-  }
-
-  #logo {
+  .logo {
     width: 25%;
     line-height: 2.5rem;
+    padding: 0;
   }
 
   section {
@@ -163,14 +159,20 @@ section {
 }
 
 @include breakpoint(lg) {
-  main, #page-footer, .inner-container {
+  .page-header {
+    left: calc( (100vw - 64rem) / 2 );
+    right: calc( (100vw - 64rem) / 2 );
+    padding: 1.5rem $padding-lg;
+  }
+
+  main,
+  .page-footer {
     width: 100%;
     max-width: 64rem;
     margin: 0 auto;
   }
-
-  #page-header .inner-container,
-  #page-footer {
+  
+  .page-footer {
     padding: 1.5rem $padding-lg;
   }
 

@@ -210,9 +210,18 @@
         <h2>Contact</h2>
       </header>
       <form>
-        <p><input type="text" name="name" placeholder="Name" aria-label="Name" required></p>
-        <p><input type="email" name="email" placeholder="Email" aria-label="Email" required></p>
-        <p><textarea name="message" cols="40" rows="8" placeholder="Message" aria-label="Message" required></textarea></p>
+        <p>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Name" required>
+        </p>
+        <p>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" required>
+        </p>
+        <p>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="40" rows="8" placeholder="Message" required></textarea>
+        </p>
         <button type="submit">Send</button>
       </form>
     </section>

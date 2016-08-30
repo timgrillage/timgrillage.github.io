@@ -7,12 +7,6 @@
   background-color: rgba(#fff, 0.975);
   overflow: hidden;
   z-index: 2;
-
-  // .page-header__inner {
-  //   border-bottom: 1px solid $bg-light;
-  //   background-color: rgba(#fff, 0.975);
-  //   overflow: hidden;
-  // }
 }
 
 .logo {
@@ -101,9 +95,9 @@ section {
 }
 
 
-// ==================================================
+// ============================================================
 // Media queries
-// ==================================================
+// ============================================================
 
 @include mq(xs) {
   .logo,
@@ -160,15 +154,15 @@ section {
 
 @include mq(lg) {
   .page-header {
-    left: calc( (100vw - 64rem) / 2 );
-    right: calc( (100vw - 64rem) / 2 );
+    left: calc( (100vw - #{$page-width}) / 2 );
+    right: calc( (100vw - #{$page-width}) / 2 );
     padding: 1.5rem $padding-lg;
   }
 
   main,
   .page-footer {
     width: 100%;
-    max-width: 64rem;
+    max-width: $page-width;
     margin: 0 auto;
   }
   

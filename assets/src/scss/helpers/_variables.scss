@@ -1,16 +1,19 @@
-// ==================================================
+// ============================================================
 // Global variables
-// ==================================================
+// ============================================================
 
-$text-dark: #222;
-$text-mid: #555;
-$text-light: #999;
+// Responsive breakpoints
+$breakpoints: (
+  'xs': (min-width: 22.5rem), // 360px
+  'sm': (min-width: 40rem),   // 640px
+  'md': (min-width: 48rem),   // 768px
+  'lg': (min-width: 64rem)    // 1024px
+);
 
-// Non-white section background
-$bg-light: #f2f2f2;
 
-// Accent colour
-$highlight: #fc3;
+// Maximum page width
+$page-width: 64rem; // 1024px
+
 
 // Left & right page padding
 $padding-xxs: 1rem;   // < 360px
@@ -18,3 +21,17 @@ $padding-xs: 1.25rem; // >= 360px
 $padding-sm: 1.5rem;  // >= 640px
 $padding-md: 1.75rem; // >= 768px
 $padding-lg: 3rem;    // >= 1024px
+
+
+// Non-white section background
+$bg-light: #f2f2f2;
+
+
+// Text
+$text-dark: #222;
+$text-mid: #555;
+$text-light: #999;
+
+
+// Accent colour
+$highlight: #fc3;
